@@ -145,7 +145,13 @@ flowchart LR
     wrap -->|학습 내용 반영| wiki_p
 ```
 
-이 workflow의 핵심은 **3축 맥락 유지의 이중 축적**입니다. 대화가 휘발되지 않고 다음 세 경로로 맥락 자산이 되어 쌓입니다. 1) seCall이 대화 로그를 `wiki/raw/sessions/YYYY-MM-DD/`로 자동 수집합니다. 2) codex 파이프라인이 raw 세션을 `wiki/wiki/projects·sessions/`로 요약·분류하여 프로젝트·주제 단위로 드릴다운 가능한 형태로 만듭니다. 3) wrap 스킬이 세션 종료 시 학습 내용을 rules · CLAUDE.md · wiki pages로 반영합니다. 이렇게 쌓인 자산이 다음 세션의 1축 입력으로 자동 로드되면서, 같은 질문도 세션을 거듭할수록 더 좋은 결과로 돌아옵니다.
+이 workflow의 핵심은 **3축 맥락 유지의 이중 축적**입니다. 대화가 휘발되지 않고 다음 세 경로로 맥락 자산이 되어 쌓입니다.
+
+1. **seCall** — 대화 로그를 `wiki/raw/sessions/YYYY-MM-DD/`로 자동 수집
+2. **codex 파이프라인** — raw 세션을 `wiki/wiki/projects·sessions/`로 요약·분류, 프로젝트·주제 단위 드릴다운 가능
+3. **wrap 스킬** — 세션 종료 시 학습 내용을 `rules` · `CLAUDE.md` · `wiki pages`로 반영
+
+이렇게 쌓인 자산이 다음 세션의 1축 입력으로 자동 로드되면서, 같은 질문도 세션을 거듭할수록 더 좋은 결과로 돌아옵니다.
 
 ## 가중치 비대칭 — 맥락이 진짜 원천입니다
 
