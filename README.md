@@ -108,44 +108,33 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-    user([사용자 요청]) --> llm{{LLM 세션}}
-
-    subgraph axis1 ["1축 입력 · 자동 로드"]
-        rules[rules/]
-        refs[refs/]
-        wiki_p[wiki/pages/]
-        claude[CLAUDE.md]
-        prompts[prompts/]
+    subgraph channel_row ["입출력 공용 채널 (MCP · gws)"]
+        direction LR
+        channel[Drive · Gmail · Docs]
     end
 
-    subgraph axis2 ["2축 출력 · 변환"]
-        out[docx · pdf · 발표자료]
+    subgraph main_row ["메인 흐름"]
+        direction LR
+        axis1["1축 입력<br/>rules · refs · wiki · CLAUDE.md"] ==> llm{{LLM 세션}} ==> axis2["2축 출력<br/>docx · pdf · 발표자료"] ==> user([사용자])
     end
 
-    subgraph axis3 ["3축 맥락 유지 · 누적"]
-        secall[seCall 자동 ingest]
-        raw[wiki/raw/sessions/]
-        codex[codex 파이프라인]
-        processed[wiki/wiki/projects·sessions/]
-        wrap[wrap 스킬]
+    subgraph accum_row ["3축 맥락 축적"]
+        direction LR
+        secall[seCall] --> raw[raw/] --> codex[codex] --> processed[wiki/]
     end
 
-    channel[("입출력 공용 채널<br/>MCP · Google Workspace CLI")]
+    channel -.자료.-> axis1
+    axis2 -.산출물.-> channel
+    llm --> secall
+    processed -.참고 재료.-> axis1
+    llm -.세션 종료 반영.-> axis1
 
-    axis1 ==>|세션 시작 자동 로드| llm
-    llm --> axis2 --> user
-
-    channel -.자료 가져오기.-> axis1
-    axis2 -.산출물 올리기.-> channel
-
-    llm -->|대화 진행| secall
-    secall --> raw --> codex --> processed
-    processed -.다음 세션 참고 재료.-> wiki_p
-
-    llm -->|세션 종료| wrap
-    wrap -->|학습 내용 반영| rules
-    wrap -->|학습 내용 반영| claude
-    wrap -->|학습 내용 반영| wiki_p
+    classDef channelStyle fill:#f3e5f5,stroke:#7b1fa2
+    classDef mainStyle fill:#e3f2fd,stroke:#1976d2,stroke-width:2px
+    classDef accumStyle fill:#fff3e0,stroke:#f57c00
+    class channel_row channelStyle
+    class main_row mainStyle
+    class accum_row accumStyle
 ```
 
 이 workflow의 핵심은 **3축 맥락 유지의 이중 축적**입니다. 대화가 휘발되지 않고 다음 세 경로로 맥락 자산이 되어 쌓입니다.
