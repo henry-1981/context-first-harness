@@ -1,0 +1,183 @@
+instrument: "21 CFR"
+title: "Title 21 — Food and Drugs, Chapter I, Subchapter H — Medical Devices"
+source_file: "CFR-2025-title21-vol8-chapI-subchapH.xml"
+source_url: "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-H"
+converted: "2026-02-27"
+total_chunks: 35
+total_sections: 2475
+chunks:
+  - file: part-800.md
+    type: PART
+    id: "Part 800"
+    title: "GENERAL"
+    sections: 6
+  - file: part-801.md
+    type: PART
+    id: "Part 801"
+    title: "LABELING"
+    sections: 39
+  - file: part-803.md
+    type: PART
+    id: "Part 803"
+    title: "MEDICAL DEVICE REPORTING"
+    sections: 26
+  - file: part-806.md
+    type: PART
+    id: "Part 806"
+    title: "MEDICAL DEVICES; REPORTS OF CORRECTIONS AND REMOVALS"
+    sections: 6
+  - file: part-807.md
+    type: PART
+    id: "Part 807"
+    title: "ESTABLISHMENT REGISTRATION AND DEVICE LISTING FOR MANUFACTURERS AND INITIAL IMPORTERS OF DEVICES"
+    sections: 24
+  - file: part-808.md
+    type: PART
+    id: "Part 808"
+    title: "EXEMPTIONS FROM FEDERAL PREEMPTION OF STATE AND LOCAL MEDICAL DEVICE REQUIREMENTS"
+    sections: 9
+  - file: part-809.md
+    type: PART
+    id: "Part 809"
+    title: "IN VITRO DIAGNOSTIC PRODUCTS FOR HUMAN USE"
+    sections: 7
+  - file: part-810.md
+    type: PART
+    id: "Part 810"
+    title: "MEDICAL DEVICE RECALL AUTHORITY"
+    sections: 13
+  - file: part-812.md
+    type: PART
+    id: "Part 812"
+    title: "INVESTIGATIONAL DEVICE EXEMPTIONS"
+    sections: 33
+  - file: part-814.md
+    type: PART
+    id: "Part 814"
+    title: "PREMARKET APPROVAL OF MEDICAL DEVICES"
+    sections: 33
+  - file: part-820.md
+    type: PART
+    id: "Part 820"
+    title: "QUALITY SYSTEM REGULATION"
+    sections: 40
+  - file: part-820-qmsr.md
+    type: PART
+    id: "Part 820"
+    title: "QUALITY MANAGEMENT SYSTEM REGULATION (EFF. 2-2-26)"
+    sections: 9
+  - file: part-821.md
+    type: PART
+    id: "Part 821"
+    title: "MEDICAL DEVICE TRACKING REQUIREMENTS"
+    sections: 10
+  - file: part-822.md
+    type: PART
+    id: "Part 822"
+    title: "POSTMARKET SURVEILLANCE"
+    sections: 38
+  - file: part-830.md
+    type: PART
+    id: "Part 830"
+    title: "UNIQUE DEVICE IDENTIFICATION"
+    sections: 20
+  - file: part-860.md
+    type: PART
+    id: "Part 860"
+    title: "MEDICAL DEVICE CLASSIFICATION PROCEDURES"
+    sections: 23
+  - file: part-861.md
+    type: PART
+    id: "Part 861"
+    title: "PROCEDURES FOR PERFORMANCE STANDARDS DEVELOPMENT"
+    sections: 9
+  - file: part-862.md
+    type: PART
+    id: "Part 862"
+    title: "CLINICAL CHEMISTRY AND CLINICAL TOXICOLOGY DEVICES"
+    sections: 251
+  - file: part-864.md
+    type: PART
+    id: "Part 864"
+    title: "HEMATOLOGY AND PATHOLOGY DEVICES"
+    sections: 122
+  - file: part-866.md
+    type: PART
+    id: "Part 866"
+    title: "IMMUNOLOGY AND MICROBIOLOGY DEVICES"
+    sections: 230
+  - file: part-868.md
+    type: PART
+    id: "Part 868"
+    title: "ANESTHESIOLOGY DEVICES"
+    sections: 150
+  - file: part-870.md
+    type: PART
+    id: "Part 870"
+    title: "CARDIOVASCULAR DEVICES"
+    sections: 167
+  - file: part-872.md
+    type: PART
+    id: "Part 872"
+    title: "DENTAL DEVICES"
+    sections: 140
+  - file: part-874.md
+    type: PART
+    id: "Part 874"
+    title: "EAR, NOSE, AND THROAT DEVICES"
+    sections: 67
+  - file: part-876.md
+    type: PART
+    id: "Part 876"
+    title: "GASTROENTEROLOGY-UROLOGY DEVICES"
+    sections: 98
+  - file: part-878.md
+    type: PART
+    id: "Part 878"
+    title: "GENERAL AND PLASTIC SURGERY DEVICES"
+    sections: 105
+  - file: part-880.md
+    type: PART
+    id: "Part 880"
+    title: "GENERAL HOSPITAL AND PERSONAL USE DEVICES"
+    sections: 119
+  - file: part-882.md
+    type: PART
+    id: "Part 882"
+    title: "NEUROLOGICAL DEVICES"
+    sections: 138
+  - file: part-884.md
+    type: PART
+    id: "Part 884"
+    title: "OBSTETRICAL AND GYNECOLOGICAL DEVICES"
+    sections: 104
+  - file: part-886.md
+    type: PART
+    id: "Part 886"
+    title: "OPHTHALMIC DEVICES"
+    sections: 144
+  - file: part-888.md
+    type: PART
+    id: "Part 888"
+    title: "ORTHOPEDIC DEVICES"
+    sections: 103
+  - file: part-890.md
+    type: PART
+    id: "Part 890"
+    title: "PHYSICAL MEDICINE DEVICES"
+    sections: 91
+  - file: part-892.md
+    type: PART
+    id: "Part 892"
+    title: "RADIOLOGY DEVICES"
+    sections: 86
+  - file: part-895.md
+    type: PART
+    id: "Part 895"
+    title: "BANNED DEVICES"
+    sections: 11
+  - file: part-898.md
+    type: PART
+    id: "Part 898"
+    title: "PERFORMANCE STANDARD FOR ELECTRODE LEAD WIRES AND PATIENT CABLES"
+    sections: 4

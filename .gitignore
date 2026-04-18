@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Logs
+*.log
+
+# Secrets — NEVER commit
+.env
+.env.local
+.env.production
+*.key
+*.pem
+service-account*.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node (선택 — MCP npx 캐시 대비)
+node_modules/
+
+# Python venv (선택 — hwp-mcp 등 로컬 venv 대비)
+.venv/
+venv/
+
+# Build artifacts
+dist/
+build/
+*.egg-info/

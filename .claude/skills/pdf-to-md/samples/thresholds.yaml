@@ -1,0 +1,30 @@
+version: 0
+updated: '2026-04-16'
+verify:
+  long_token_ratio:
+    value: null
+    direction: smaller_better
+    advisory_only: false
+    params:
+      L_constant: null
+  valid_char_ratio:
+    value: null
+    direction: larger_better
+    advisory_only: false
+  line_length_p99:
+    value: null
+    direction: smaller_better
+    advisory_only: false
+  reference_length_ratio:
+    value: null
+    direction: larger_better
+    advisory_only: false
+observe:
+  cid_health_min:
+    value: null
+    direction: larger_better
+    advisory_only: false
+baseline_per_layout:
+  body: 800
+  slide: 348.71060606060604
+  form: 500

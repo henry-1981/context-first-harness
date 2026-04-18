@@ -1,0 +1,475 @@
+instrument: "FD&C Act"
+title: "Federal Food, Drug, and Cosmetic Act — Subchapter V (Drugs and Devices)"
+source_file: "USCODE-2024-title21-chap9-subchapV.htm"
+source_url: "https://uscode.house.gov/view.xhtml?path=/prelim@title21/chapter9/subchapter5&edition=prelim"
+converted: "2026-02-27"
+total_chunks: 117
+chunks:
+  - file: section-351.md
+    type: SECTION
+    id: "21 U.S.C. § 351"
+    title: "Adulterated drugs and devices"
+  - file: section-352.md
+    type: SECTION
+    id: "21 U.S.C. § 352"
+    title: "Misbranded drugs and devices"
+  - file: section-353.md
+    type: SECTION
+    id: "21 U.S.C. § 353"
+    title: "Exemptions and consideration for certain drugs, devices, and biological products"
+  - file: section-353a.md
+    type: SECTION
+    id: "21 U.S.C. § 353a"
+    title: "Pharmacy compounding"
+  - file: section-353a-1.md
+    type: SECTION
+    id: "21 U.S.C. § 353a-1"
+    title: "Enhanced communication"
+  - file: section-353b.md
+    type: SECTION
+    id: "21 U.S.C. § 353b"
+    title: "Outsourcing facilities"
+  - file: section-353c.md
+    type: SECTION
+    id: "21 U.S.C. § 353c"
+    title: "Prereview of television advertisements"
+  - file: section-353d.md
+    type: SECTION
+    id: "21 U.S.C. § 353d"
+    title: "Process to update labeling for certain generic drugs"
+  - file: section-354.md
+    type: SECTION
+    id: "21 U.S.C. § 354"
+    title: "Veterinary feed directive drugs"
+  - file: section-355.md
+    type: SECTION
+    id: "21 U.S.C. § 355"
+    title: "New drugs"
+  - file: section-355-1.md
+    type: SECTION
+    id: "21 U.S.C. § 355-1"
+    title: "Risk evaluation and mitigation strategies"
+  - file: section-355-2.md
+    type: SECTION
+    id: "21 U.S.C. § 355-2"
+    title: "Actions for delays of generic drugs and biosimilar biological products"
+  - file: section-355a.md
+    type: SECTION
+    id: "21 U.S.C. § 355a"
+    title: "Pediatric studies of drugs"
+  - file: section-355b.md
+    type: SECTION
+    id: "21 U.S.C. § 355b"
+    title: "Adverse-event reporting"
+  - file: section-355c.md
+    type: SECTION
+    id: "21 U.S.C. § 355c"
+    title: "Research into pediatric uses for drugs and biological products"
+  - file: section-355c-1.md
+    type: SECTION
+    id: "21 U.S.C. § 355c-1"
+    title: "Report"
+  - file: section-355d.md
+    type: SECTION
+    id: "21 U.S.C. § 355d"
+    title: "Internal committee for review of pediatric plans, assessments, deferrals, deferral extensions, and waivers"
+  - file: section-355e.md
+    type: SECTION
+    id: "21 U.S.C. § 355e"
+    title: "Pharmaceutical security"
+  - file: section-355f.md
+    type: SECTION
+    id: "21 U.S.C. § 355f"
+    title: "Extension of exclusivity period for new qualified infectious disease products"
+  - file: section-355g.md
+    type: SECTION
+    id: "21 U.S.C. § 355g"
+    title: "Utilizing real world evidence"
+  - file: section-355h.md
+    type: SECTION
+    id: "21 U.S.C. § 355h"
+    title: "Regulation of certain nonprescription drugs that are marketed without an approved drug application"
+  - file: section-356.md
+    type: SECTION
+    id: "21 U.S.C. § 356"
+    title: "Expedited approval of drugs for serious or life-threatening diseases or conditions"
+  - file: section-356-1.md
+    type: SECTION
+    id: "21 U.S.C. § 356-1"
+    title: "Accelerated approval of priority countermeasures"
+  - file: section-356-2.md
+    type: SECTION
+    id: "21 U.S.C. § 356-2"
+    title: "Accelerated approval Council"
+  - file: section-356a.md
+    type: SECTION
+    id: "21 U.S.C. § 356a"
+    title: "Manufacturing changes"
+  - file: section-356b.md
+    type: SECTION
+    id: "21 U.S.C. § 356b"
+    title: "Reports of postmarketing studies"
+  - file: section-356c.md
+    type: SECTION
+    id: "21 U.S.C. § 356c"
+    title: "Discontinuance or interruption in the production of life-saving drugs"
+  - file: section-356c-1.md
+    type: SECTION
+    id: "21 U.S.C. § 356c-1"
+    title: "Annual reporting on drug shortages"
+  - file: section-356d.md
+    type: SECTION
+    id: "21 U.S.C. § 356d"
+    title: "Coordination; task force and strategic plan"
+  - file: section-356e.md
+    type: SECTION
+    id: "21 U.S.C. § 356e"
+    title: "Drug shortage list"
+  - file: section-356f.md
+    type: SECTION
+    id: "21 U.S.C. § 356f"
+    title: "Hospital repackaging of drugs in shortage"
+  - file: section-356g.md
+    type: SECTION
+    id: "21 U.S.C. § 356g"
+    title: "Standards for regenerative medicine and regenerative advanced therapies"
+  - file: section-356h.md
+    type: SECTION
+    id: "21 U.S.C. § 356h"
+    title: "Competitive generic therapies"
+  - file: section-356i.md
+    type: SECTION
+    id: "21 U.S.C. § 356i"
+    title: "Prompt reports of marketing status"
+  - file: section-356j.md
+    type: SECTION
+    id: "21 U.S.C. § 356j"
+    title: "Discontinuance or interruption in the production of medical devices"
+  - file: section-356k.md
+    type: SECTION
+    id: "21 U.S.C. § 356k"
+    title: "Platform technologies"
+  - file: section-356l.md
+    type: SECTION
+    id: "21 U.S.C. § 356l"
+    title: "Advanced manufacturing technologies designation program"
+  - file: section-357.md
+    type: SECTION
+    id: "21 U.S.C. § 357"
+    title: "Qualification of drug development tools"
+  - file: section-358.md
+    type: SECTION
+    id: "21 U.S.C. § 358"
+    title: "Authority to designate official names"
+  - file: section-359.md
+    type: SECTION
+    id: "21 U.S.C. § 359"
+    title: "Nonapplicability of subchapter to cosmetics"
+  - file: section-360.md
+    type: SECTION
+    id: "21 U.S.C. § 360"
+    title: "Registration of producers of drugs or devices"
+  - file: section-360a.md
+    type: SECTION
+    id: "21 U.S.C. § 360a"
+    title: "Clinical trial guidance for antibiotic drugs"
+  - file: section-360a-1.md
+    type: SECTION
+    id: "21 U.S.C. § 360a-1"
+    title: "Clinical trials"
+  - file: section-360a-2.md
+    type: SECTION
+    id: "21 U.S.C. § 360a-2"
+    title: "Susceptibility test interpretive criteria for microorganisms"
+  - file: section-360b.md
+    type: SECTION
+    id: "21 U.S.C. § 360b"
+    title: "New animal drugs"
+  - file: section-360b-1.md
+    type: SECTION
+    id: "21 U.S.C. § 360b-1"
+    title: "Priority zoonotic animal drugs"
+  - file: section-360c.md
+    type: SECTION
+    id: "21 U.S.C. § 360c"
+    title: "Classification of devices intended for human use"
+  - file: section-360c-1.md
+    type: SECTION
+    id: "21 U.S.C. § 360c-1"
+    title: "Reporting"
+  - file: section-360d.md
+    type: SECTION
+    id: "21 U.S.C. § 360d"
+    title: "Performance standards"
+  - file: section-360e.md
+    type: SECTION
+    id: "21 U.S.C. § 360e"
+    title: "Premarket approval"
+  - file: section-360e-1.md
+    type: SECTION
+    id: "21 U.S.C. § 360e-1"
+    title: "Pediatric uses of devices"
+  - file: section-360e-3.md
+    type: SECTION
+    id: "21 U.S.C. § 360e-3"
+    title: "Breakthrough devices"
+  - file: section-360e-4.md
+    type: SECTION
+    id: "21 U.S.C. § 360e-4"
+    title: "Predetermined change control plans for devices"
+  - file: section-360f.md
+    type: SECTION
+    id: "21 U.S.C. § 360f"
+    title: "Banned devices"
+  - file: section-360g.md
+    type: SECTION
+    id: "21 U.S.C. § 360g"
+    title: "Judicial review"
+  - file: section-360g-1.md
+    type: SECTION
+    id: "21 U.S.C. § 360g-1"
+    title: "Agency documentation and review of significant decisions regarding devices"
+  - file: section-360g-2.md
+    type: SECTION
+    id: "21 U.S.C. § 360g-2"
+    title: "Third party data transparency"
+  - file: section-360h.md
+    type: SECTION
+    id: "21 U.S.C. § 360h"
+    title: "Notification and other remedies"
+  - file: section-360h-1.md
+    type: SECTION
+    id: "21 U.S.C. § 360h-1"
+    title: "Program to improve the device recall system"
+  - file: section-360i.md
+    type: SECTION
+    id: "21 U.S.C. § 360i"
+    title: "Records and reports on devices"
+  - file: section-360j.md
+    type: SECTION
+    id: "21 U.S.C. § 360j"
+    title: "General provisions respecting control of devices intended for human use"
+  - file: section-360k.md
+    type: SECTION
+    id: "21 U.S.C. § 360k"
+    title: "State and local requirements respecting devices"
+  - file: section-360l.md
+    type: SECTION
+    id: "21 U.S.C. § 360l"
+    title: "Postmarket surveillance"
+  - file: section-360m.md
+    type: SECTION
+    id: "21 U.S.C. § 360m"
+    title: "Accredited persons"
+  - file: section-360n.md
+    type: SECTION
+    id: "21 U.S.C. § 360n"
+    title: "Priority review to encourage treatments for tropical diseases"
+  - file: section-360n-1.md
+    type: SECTION
+    id: "21 U.S.C. § 360n-1"
+    title: "Priority review for qualified infectious disease products"
+  - file: section-360n-2.md
+    type: SECTION
+    id: "21 U.S.C. § 360n-2"
+    title: "Ensuring cybersecurity of devices"
+  - file: section-360aa.md
+    type: SECTION
+    id: "21 U.S.C. § 360aa"
+    title: "Recommendations for investigations of drugs for rare diseases or conditions"
+  - file: section-360bb.md
+    type: SECTION
+    id: "21 U.S.C. § 360bb"
+    title: "Designation of drugs for rare diseases or conditions"
+  - file: section-360cc.md
+    type: SECTION
+    id: "21 U.S.C. § 360cc"
+    title: "Protection for drugs for rare diseases or conditions"
+  - file: section-360dd.md
+    type: SECTION
+    id: "21 U.S.C. § 360dd"
+    title: "Open protocols for investigations of drugs for rare diseases or conditions"
+  - file: section-360ee.md
+    type: SECTION
+    id: "21 U.S.C. § 360ee"
+    title: "Grants and contracts for development of drugs for rare diseases and conditions"
+  - file: section-360ee-1.md
+    type: SECTION
+    id: "21 U.S.C. § 360ee-1"
+    title: "FDA rare neurodegenerative disease grant program"
+  - file: section-360ff.md
+    type: SECTION
+    id: "21 U.S.C. § 360ff"
+    title: "Priority review to encourage treatments for rare pediatric diseases"
+  - file: section-360ff-1.md
+    type: SECTION
+    id: "21 U.S.C. § 360ff-1"
+    title: "Targeted drugs for rare diseases"
+  - file: section-360hh.md
+    type: SECTION
+    id: "21 U.S.C. § 360hh"
+    title: "Definitions"
+  - file: section-360ii.md
+    type: SECTION
+    id: "21 U.S.C. § 360ii"
+    title: "Program of control"
+  - file: section-360jj.md
+    type: SECTION
+    id: "21 U.S.C. § 360jj"
+    title: "Studies by Secretary"
+  - file: section-360kk.md
+    type: SECTION
+    id: "21 U.S.C. § 360kk"
+    title: "Performance standards for electronic products"
+  - file: section-360ll.md
+    type: SECTION
+    id: "21 U.S.C. § 360ll"
+    title: "Notification of defects in and repair or replacement of electronic products"
+  - file: section-360mm.md
+    type: SECTION
+    id: "21 U.S.C. § 360mm"
+    title: "Imports"
+  - file: section-360nn.md
+    type: SECTION
+    id: "21 U.S.C. § 360nn"
+    title: "Inspection, records, and reports"
+  - file: section-360oo.md
+    type: SECTION
+    id: "21 U.S.C. § 360oo"
+    title: "Prohibited acts"
+  - file: section-360pp.md
+    type: SECTION
+    id: "21 U.S.C. § 360pp"
+    title: "Enforcement"
+  - file: section-360qq.md
+    type: SECTION
+    id: "21 U.S.C. § 360qq"
+    title: "Repealed. Pub. L. 105–362, title VI, §601(a)(2)(A), Nov. 10, 1998, 112 Stat. 3285"
+  - file: section-360rr.md
+    type: SECTION
+    id: "21 U.S.C. § 360rr"
+    title: "Federal-State cooperation"
+  - file: section-360ss.md
+    type: SECTION
+    id: "21 U.S.C. § 360ss"
+    title: "State standards"
+  - file: section-360bbb.md
+    type: SECTION
+    id: "21 U.S.C. § 360bbb"
+    title: "Expanded access to unapproved therapies and diagnostics"
+  - file: section-360bbb-0.md
+    type: SECTION
+    id: "21 U.S.C. § 360bbb-0"
+    title: "Expanded access policy required for investigational drugs"
+  - file: section-360bbb-1.md
+    type: SECTION
+    id: "21 U.S.C. § 360bbb-1"
+    title: "Dispute resolution"
+  - file: section-360bbb-2.md
+    type: SECTION
+    id: "21 U.S.C. § 360bbb-2"
+    title: "Classification of products"
+  - file: section-360bbb-3.md
+    type: SECTION
+    id: "21 U.S.C. § 360bbb-3"
+    title: "Authorization for medical products for use in emergencies"
+  - file: section-360bbb-4.md
+    type: SECTION
+    id: "21 U.S.C. § 360bbb-4"
+    title: "Countermeasure development, review, and technical assistance"
+  - file: section-360bbb-5.md
+    type: SECTION
+    id: "21 U.S.C. § 360bbb-5"
+    title: "Critical Path Public-Private Partnerships"
+  - file: section-360bbb-6.md
+    type: SECTION
+    id: "21 U.S.C. § 360bbb-6"
+    title: "Risk communication"
+  - file: section-360bbb-7.md
+    type: SECTION
+    id: "21 U.S.C. § 360bbb-7"
+    title: "Notification"
+  - file: section-360bbb-8.md
+    type: SECTION
+    id: "21 U.S.C. § 360bbb-8"
+    title: "Consultation with external experts on rare diseases, targeted therapies, and genetic targeting of treatments"
+  - file: section-360ccc.md
+    type: SECTION
+    id: "21 U.S.C. § 360ccc"
+    title: "Conditional approval of new animal drugs for minor use and minor species and certain new animal drugs"
+  - file: section-360ccc-1.md
+    type: SECTION
+    id: "21 U.S.C. § 360ccc-1"
+    title: "Index of legally marketed unapproved new animal drugs for minor species"
+  - file: section-360ccc-2.md
+    type: SECTION
+    id: "21 U.S.C. § 360ccc-2"
+    title: "Designated new animal drugs for minor use or minor species"
+  - file: section-360ddd.md
+    type: SECTION
+    id: "21 U.S.C. § 360ddd"
+    title: "Definitions"
+  - file: section-360ddd-1.md
+    type: SECTION
+    id: "21 U.S.C. § 360ddd-1"
+    title: "Regulation of medical gases"
+  - file: section-360ddd-2.md
+    type: SECTION
+    id: "21 U.S.C. § 360ddd-2"
+    title: "Inapplicability of drug fees to designated medical gases"
+  - file: section-360eee.md
+    type: SECTION
+    id: "21 U.S.C. § 360eee"
+    title: "Definitions"
+  - file: section-360eee-1.md
+    type: SECTION
+    id: "21 U.S.C. § 360eee-1"
+    title: "Requirements"
+  - file: section-360eee-2.md
+    type: SECTION
+    id: "21 U.S.C. § 360eee-2"
+    title: "National standards for prescription drug wholesale distributors"
+  - file: section-360eee-3.md
+    type: SECTION
+    id: "21 U.S.C. § 360eee-3"
+    title: "National standards for third-party logistics providers"
+  - file: section-360eee-4.md
+    type: SECTION
+    id: "21 U.S.C. § 360eee-4"
+    title: "Uniform national policy"
+  - file: section-360fff.md
+    type: SECTION
+    id: "21 U.S.C. § 360fff"
+    title: "Definitions"
+  - file: section-360fff-1.md
+    type: SECTION
+    id: "21 U.S.C. § 360fff-1"
+    title: "Submission of requests"
+  - file: section-360fff-2.md
+    type: SECTION
+    id: "21 U.S.C. § 360fff-2"
+    title: "Eligibility determinations; data submission; filing"
+  - file: section-360fff-3.md
+    type: SECTION
+    id: "21 U.S.C. § 360fff-3"
+    title: "GRASE determination"
+  - file: section-360fff-4.md
+    type: SECTION
+    id: "21 U.S.C. § 360fff-4"
+    title: "Guidance; other provisions"
+  - file: section-360fff-5.md
+    type: SECTION
+    id: "21 U.S.C. § 360fff-5"
+    title: "Repealed. Pub. L. 116–136, div. A, title III, §3854(b)(5), Mar. 27, 2020, 134 Stat. 456"
+  - file: section-360fff-6.md
+    type: SECTION
+    id: "21 U.S.C. § 360fff-6"
+    title: "Non-sunscreen time and extent applications"
+  - file: section-360fff-7.md
+    type: SECTION
+    id: "21 U.S.C. § 360fff-7"
+    title: "Report"
+  - file: section-360fff-8.md
+    type: SECTION
+    id: "21 U.S.C. § 360fff-8"
+    title: "Sunset"

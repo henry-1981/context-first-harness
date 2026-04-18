@@ -1,0 +1,6 @@
+# 임시 PDF 자산 — Layer 2 회귀 시에만 필요, 작업 후 삭제
+samples/inputs/*.pdf
+
+# Python 부산물
+samples/scripts/__pycache__/
+samples/scripts/*.pyc

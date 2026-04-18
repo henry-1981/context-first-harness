@@ -1,0 +1,30 @@
+{
+  "$schema": "https://raw.githubusercontent.com/anthropics/claude-code/main/.mcp.schema.json",
+  "mcpServers": {
+    "context7": {
+      "$comment": "Up-to-date documentation and code examples via Context7",
+      "command": "bash",
+      "args": ["-l", "-c", "exec npx -y @upstash/context7-mcp@latest"]
+    },
+    "sequential-thinking": {
+      "$comment": "Step-by-step reasoning for complex problems",
+      "command": "bash",
+      "args": ["-l", "-c", "exec npx -y @modelcontextprotocol/server-sequential-thinking"]
+    },
+    "word": {
+      "$comment": "Word document (.docx) creation and manipulation (pinned v1.1.11)",
+      "command": "uvx",
+      "args": ["--from", "office-word-mcp-server==1.1.11", "word_mcp_server"]
+    },
+    "hwp": {
+      "$comment": "OPTIONAL — HWP document control via COM automation (Korean Windows + 한컴오피스 only). Replace <PATH_TO> with your local hwp-mcp install. See https://github.com/jkf87/hwp-mcp",
+      "command": "<PATH_TO>/hwp-mcp/.venv/Scripts/python.exe",
+      "args": ["<PATH_TO>/hwp-mcp/hwp_mcp_stdio_server.py"]
+    }
+  },
+  "staggeredStartup": {
+    "enabled": true,
+    "delayMs": 500,
+    "connectionTimeout": 15000
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "version": 20260416,
+  "updated": "2026-04-16",
+  "samples": {
+    "expected/harness-day1.expected.md": {
+      "role": "expected",
+      "layout": "slide",
+      "pages": 55,
+      "chars_per_page": 459.25454545454545,
+      "signals": {
+        "cid_health": 0.919350990217132,
+        "long_token_ratio": 0.06217303822937626,
+        "valid_char_ratio": 0.919350990217132,
+        "line_length_p99": 110,
+        "reference_length_ratio": 1.311115842345611
+      }
+    },
+    "expected/anc-harness-s1.expected.md": {
+      "role": "expected",
+      "layout": "slide",
+      "pages": 24,
+      "chars_per_page": 238.16666666666666,
+      "signals": {
+        "cid_health": 0.8840290381125226,
+        "long_token_ratio": 0.02909647779479326,
+        "valid_char_ratio": 0.8840290381125226,
+        "line_length_p99": 95,
+        "reference_length_ratio": 0.658377833490478
+      }
+    },
+    "damaged/harness-day1.kordoc.md": {
+      "role": "damaged",
+      "layout": "slide",
+      "pages": 55,
+      "chars_per_page": 509.8,
+      "signals": {
+        "cid_health": 0.9057023045768969,
+        "long_token_ratio": 0.04561143984220907,
+        "valid_char_ratio": 0.9057023045768969,
+        "line_length_p99": 319,
+        "reference_length_ratio": 1.4547619151071698
+      }
+    },
+    "damaged/anc-harness-s1.kordoc.md": {
+      "role": "damaged",
+      "layout": "slide",
+      "pages": 24,
+      "chars_per_page": 38.208333333333336,
+      "signals": {
+        "cid_health": 0.8277634961439588,
+        "long_token_ratio": 0.024539877300613498,
+        "valid_char_ratio": 0.8277634961439588,
+        "line_length_p99": 23,
+        "reference_length_ratio": 0.09296151623513464
+      }
+    }
+  },
+  "baseline_per_layout": {
+    "slide": 348.71060606060604
+  },
+  "baseline_low_confidence": []
+}
