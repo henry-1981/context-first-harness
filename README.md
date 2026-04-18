@@ -76,27 +76,30 @@ flowchart LR
 3축은 두 층으로 작동합니다. **상층**은 맥락을 정리·반영하는 스킬 4종(`wrap` · `repo-cleanup` · `council` · `deliverable-review`)이고, **하층**은 대화 세션이 자동 수집·요약되어 다음 세션의 참고 재료가 되는 파이프라인(`seCall` → `wiki/raw/sessions/` → `codex` → `wiki/wiki/projects·sessions/`)입니다. 상층이 질을 높이는 정리 층이라면 하층은 원재료가 쌓이는 누적 층입니다. 두 층이 모두 rules · CLAUDE.md · wiki pages로 모여 다음 세션의 1축 입력으로 자동 로드되면서 순환이 닫힙니다.
 
 ```mermaid
-flowchart TB
-    subgraph upper ["상층 · 맥락 정리·반영 스킬 4종 (질)"]
-        wrap[wrap<br/>세션 종료 반영]
-        cleanup[repo-cleanup<br/>찌꺼기 정리]
-        council[council<br/>다관점 교차 검토]
-        review[deliverable-review<br/>산출물 검증 게이트]
+flowchart LR
+    subgraph upper ["① 상층 · 정리 (질)"]
+        direction TB
+        wrap[wrap]
+        cleanup[repo-cleanup]
+        council[council]
+        review[deliverable-review]
     end
 
-    subgraph lower ["하층 · 세션 원재료 축적 파이프라인 (양)"]
-        session[현재 대화 세션]
-        secall[seCall 자동 ingest]
-        raw[wiki/raw/sessions/YYYY-MM-DD/]
-        codex[codex 파이프라인]
-        processed[wiki/wiki/projects·sessions/]
-        session --> secall --> raw --> codex --> processed
+    subgraph lower ["② 하층 · 축적 (양)"]
+        direction LR
+        session[대화 세션] --> secall[seCall] --> raw[raw/sessions/] --> codex[codex] --> processed[wiki/projects·sessions/]
     end
 
-    wrap -->|학습 내용 반영| target[rules · CLAUDE.md · wiki/pages/]
-    processed -.참고 재료.-> target
+    upper ==>|학습 반영| target[("③ 지식 자산<br/>rules · CLAUDE.md · wiki pages")]
+    lower -.참고 재료.-> target
+    target ==>|다음 세션 1축 로드| next([다음 세션])
 
-    target ==>|다음 세션 자동 로드| next([다음 세션 1축 입력])
+    classDef quality fill:#e3f2fd,stroke:#1976d2
+    classDef volume fill:#fff3e0,stroke:#f57c00
+    classDef asset fill:#e8f5e9,stroke:#388e3c,stroke-width:2px
+    class upper quality
+    class lower volume
+    class target asset
 ```
 
 ## 전체 Workflow
