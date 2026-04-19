@@ -16,7 +16,7 @@
 |---|------|----------|
 | **1축 입력** | 기존 지식을 AI 인식 가능한 형태로 전환 | `rules/`, `refs/`, `wiki/pages/`, `prompts/`, `CLAUDE.md`, `.claude/hooks/`, `skill + wiki 페어` (예: `medical-device-ra-qa-frame`) |
 | **2축 출력** | AI 산출물을 사람이 받는 형식으로 변환 | `.claude/skills/{docx, pdf, pdf-to-md}` |
-| **3축 맥락 유지** | 세션 간 맥락 보존과 복리 축적 | `.claude/skills/{wrap, repo-cleanup, council, deliverable-review, skill-creator, check-harness}`, `.claude/agents/*`, `wiki/raw/sessions/` (seCall 자동 수집), `wiki/wiki/projects·sessions/` (codex 1차 정리) |
+| **3축 맥락 유지** | 세션 간 맥락 보존과 복리 축적 | `.claude/skills/{wrap, repo-cleanup, council, deliverable-review, skill-creator, check-harness, check-harness-context-first}`, `.claude/agents/*`, `wiki/raw/sessions/` (seCall 자동 수집), `wiki/wiki/projects·sessions/` (codex 1차 정리) |
 | **입출력 공용 채널** (1축과 2축에 걸침) | 입력과 출력 양쪽에서 쓰는 도구 | `.mcp.json` MCP 서버, `gws-setup` (Google Workspace) |
 
 비개발자 하네스의 핵심은 **구조와 맥락을 미리 고정해두면 짧은 요청도 LLM이 스스로 처리한다**는 점이다. 대화 세션이 seCall과 codex 파이프라인을 통해 자동 아카이빙되어 다음 세션의 참고 재료가 되므로, 매 세션은 이전 세션 위에 복리로 쌓인다.
@@ -30,8 +30,8 @@
 ├── .mcp.json             ← MCP 서버 (입출력 공용 채널)
 ├── .claude/
 │   ├── settings.json     ← hook 등록
-│   ├── skills/           ← 12종 (3축 분포 + medical-device-ra-qa-frame 페어 사례)
-│   ├── agents/           ← 12종 (검증·메타 reviewer, strategist·critic·narrator 등)
+│   ├── skills/           ← 13종 (3축 분포 + medical-device-ra-qa-frame 페어 사례 + check-harness-context-first 파생)
+│   ├── agents/           ← 13종 (검증·메타 reviewer, strategist·critic·narrator, context-first-auditor 등)
 │   └── hooks/            ← 운영 4종 (session-start-handoff-scan · session-start-context-inject · wiki-check · block-template-write) + 테스트 1종
 ├── rules/                ← 행동 규칙 7개 (@import로 자동 로드, INDEX.md 카탈로그)
 ├── refs/                 ← 정적 지식 (FDA 3계층 153건: statute 117 · regulation 35 · guidance 1 sample)

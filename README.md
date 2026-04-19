@@ -15,6 +15,7 @@
 - [왜 3축인가](#왜-3축인가)
 - [전체 Workflow](#전체-workflow)
 - [가중치 비대칭 — 맥락이 진짜 원천입니다](#가중치-비대칭--맥락이-진짜-원천입니다)
+- [자가 진단 — `check-harness-context-first` 스킬](#자가-진단--check-harness-context-first-스킬)
 - [핵심 패턴 3가지](#핵심-패턴-3가지)
 - [가설은 어디서 나왔나](#가설은-어디서-나왔나)
 - [이 레포는 작동 사례입니다](#이-레포는-작동-사례입니다)
@@ -192,6 +193,26 @@ flowchart LR
 > 개발자 하네스는 6축 균등(각 16.7%)입니다. 비개발자 재정의에서는 맥락(입력)이 50%로 올라가고, 계획·실행·검증 3축이 합산 10%로 통합됩니다. 구조와 맥락 유지(개선)는 15%로 유사하게 유지됩니다.
 
 이 가중치는 6축 균등 평균과 다른 약점·강점을 짚어내므로, 비개발자에게 **더 정확한 진단**을 내려줍니다.
+
+## 자가 진단 — `check-harness-context-first` 스킬
+
+가중치 비대칭이 단순한 시각화에 그치지 않고 실제 진단 도구로 작동해야 의미가 있습니다. 기존 `check-harness` 스킬은 개발자 워크플로우(test runner · formatter hook · lint · CI)를 전제로 6축 24항목을 균등 가중으로 측정합니다. 이 기준을 비개발자 하네스에 그대로 들이대면 검증 항목 절반이 빈 칸으로 나오고, 정작 비개발자가 의존하는 자산(refs INDEX 드릴다운 · wiki 5-layer · skill과 wiki 페어 · handoff 라이프사이클)은 측정 대상에서 빠집니다.
+
+`check-harness-context-first`는 이 갭을 메우려고 만든 파생 스킬입니다. 원본 v3에서 개발 지향 항목 3건(B1 검증 스킬 호출 · D1 검증 자산 · D2 lint 훅)을 비개발자 등가물(verification skill · deliverable-review · 문서 lint 훅)로 재정의하고, 비개발자 하네스 고유 영역 6건을 신규 항목으로 추가해 **6축 30항목 체크리스트**로 확장했습니다. 4개 서브에이전트(`skill-portfolio-analyzer` · `session-pattern-analyzer` · `context-quality-reviewer` · 신규 `context-first-auditor`)를 병렬 실행해 데이터를 수집하고, 결과는 `.harness/check-reports/check-harness-context-first-{날짜}-{scope}/` 아래 HTML/MD 리포트로 저장됩니다.
+
+추가된 6항목은 비개발자 하네스 고유 영역에 직접 대응합니다.
+
+| ID | 점검 항목 | 의미 |
+|---|---|---|
+| C7 | refs/INDEX 드릴다운 무결성 | 정적 지식이 INDEX 트리로 빠르게 탐색되는지 |
+| C8 | wiki 5-layer 구분 유지 | sources / pages / raw / wiki / schema 경계 준수 |
+| C9 | skill + wiki 페어 정합성 | 도메인 사고 구조가 페어 구조로 묶여 있는지 |
+| B7 | 출력 스킬 호출 흐름 | docx · pdf · pdf-to-md 등 2축 출력 자산이 실제 호출되는지 |
+| E4 | handoff 라이프사이클 폐쇄 | 생성·재개·완료가 git history로 끝나는지 |
+| E5 | seCall→codex 파이프라인 최근성 | 세션 자동 축적이 끊기지 않고 흐르는지 |
+
+> [!TIP]
+> 비개발자 하네스를 fork·clone해 자기 도메인 자료를 채운 뒤 한 달쯤 운용하고 `/check-harness-context-first` 스킬로 자가 진단해 보면 어느 축이 비어 있는지 한눈에 보입니다. 본 레포 자체에 대한 진단 리포트도 `.harness/check-reports/`에 동봉되어 있어 어떤 형식으로 결과가 나오는지 미리 확인할 수 있습니다.
 
 ## 핵심 패턴 3가지
 
