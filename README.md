@@ -241,7 +241,14 @@ flowchart LR
 
 ## 사용법
 
-사용법, 폴더 구조, 컨벤션, skill과 wiki 페어 작성법, MCP 설정 등 운영 매뉴얼은 모두 [`CLAUDE.md`](./CLAUDE.md)에 정리되어 있습니다. Claude Code가 세션 시작 시 자동으로 불러오므로 사용자가 직접 읽지 않아도 LLM이 컨벤션에 따라 작동합니다.
+> [!NOTE]
+> 운영 매뉴얼은 [`CLAUDE.md`](./CLAUDE.md)에 있습니다. Claude Code가 세션 시작 시 자동 로드하므로 사용자가 직접 읽지 않아도 LLM이 컨벤션에 따라 작동합니다.
+
+1. 이 레포를 fork 또는 `git clone`
+2. `CLAUDE.md`의 "사용자 시작 가이드" 따라 환경 설치 (Claude Code, Python, bash, 선택 MCP)
+3. `wiki/sources/`와 `refs/`에 자기 도메인 자료 채우기
+4. 첫 작업 시 LLM이 `medical-device-ra-qa-frame` 패턴 보고 자기 도메인 thinking frame 페어 고정을 제안
+5. 세션 종료 시 `wrap` 스킬로 맥락 반영, 다음 세션은 SessionStart hook이 handoff·lessons를 자동 주입
 
 ## 참고·영감·의존성
 
