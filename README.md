@@ -1,4 +1,4 @@
-# 비개발자 하네스
+<h1 align="center">비개발자 하네스</h1>
 
 ![도메인 전문가가 Claude Code를 운영체제처럼 쓰는 모습](assets/hero.jpg)
 
@@ -233,7 +233,8 @@ flowchart LR
 ├── rules/                ← 행동 규칙 7개 (content-writing·naming·binary-files·qms-sop·workflow·handoff·session-entry)
 ├── refs/                 ← 정적 지식 (FDA 3계층 153건: statute 117 · regulation 35 · guidance 1 sample)
 ├── wiki/                 ← 동적 지식 (5개 층: sources·pages·raw/sessions·wiki/projects·sessions·schema, medical-device 사고 구조 1건)
-└── prompts/              ← LLM 운영 프롬프트 fragment
+├── prompts/              ← LLM 운영 프롬프트 fragment
+└── tools/                ← 운영 자동화 도구 (generate-weights-png.py 등)
 ```
 
 ## 사용법
