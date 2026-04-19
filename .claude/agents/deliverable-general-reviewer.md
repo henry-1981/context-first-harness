@@ -40,7 +40,7 @@ Read 도구로 대상 파일을 통째로 읽으세요. 매우 긴 파일이면 
 ### Step 2 — Feedback memory 동적 로드
 다음을 수행:
 ```
-Glob: C:/Users/KHC/.claude/projects/C--Project/memory/feedback_*.md
+Glob: ~/.claude/projects/*/memory/feedback_*.md
 ```
 검증 관련 feedback만 필터링. 다음 키워드 중 하나가 있으면 검증 관련:
 - 검증, 확인, 가정, 인용, 출처, scope, 범위, 누락, 예외, 단서, 부칙, 임의, 추측, 진단, 근거, 사실, 정합성
