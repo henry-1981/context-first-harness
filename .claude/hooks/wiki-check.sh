@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 # wiki-check.sh — Session start hook: detect un-ingested wiki sources
-# Called by Claude Code PreToolUse/Initialize hook
+# Called by Claude Code SessionStart hook
 
 set -euo pipefail
 
-WIKI_DIR="C:/Project/wiki"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
+WIKI_DIR="$REPO_ROOT/wiki"
 SOURCES_DIR="$WIKI_DIR/sources"
 PAGES_DIR="$WIKI_DIR/pages"
 IGNORE_FILE="$WIKI_DIR/.wiki-ignore"
