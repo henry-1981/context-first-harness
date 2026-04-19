@@ -160,7 +160,7 @@ Agent(
 
 ## Phase 2 — 체크리스트 판정 (6축 매핑)
 
-24항목 각각에 대해 PASS/WEAK_PASS/FAIL/N/A를 판정하고 증거 문자열을 함께 기록.
+30항목 각각에 대해 PASS/WEAK_PASS/FAIL/N/A를 판정하고 증거 문자열을 함께 기록.
 
 ### 축별 데이터 소스 매핑 (v4 — 신규 항목 반영)
 
@@ -378,7 +378,7 @@ Sessions analyzed: User {Nu} / Project {Np} ({period}) · Scanned: {YYYY-MM-DD H
 </details>
 
 <details>
-<summary>📋 상세 체크리스트 (6축 · 24항목)</summary>
+<summary>📋 상세 체크리스트 (6축 · 30항목)</summary>
 
 ### 축 1 — 구조 (👤 User × Static)
 | ID | L | Item | Status | Evidence |
