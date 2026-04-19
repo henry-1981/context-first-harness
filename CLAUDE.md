@@ -27,16 +27,21 @@
 .
 ├── CLAUDE.md             ← 본 파일 (하네스 운영 지침, LLM 자동 로드)
 ├── README.md             ← 가설·경험·3축 시각화·전체 workflow
+├── LICENSE               ← MIT
 ├── .mcp.json             ← MCP 서버 (입출력 공용 채널)
 ├── .claude/
 │   ├── settings.json     ← hook 등록
 │   ├── skills/           ← 13종 (3축 분포 + medical-device-ra-qa-frame 페어 사례 + check-harness-context-first 파생)
 │   ├── agents/           ← 13종 (검증·메타 reviewer, strategist·critic·narrator, context-first-auditor 등)
 │   └── hooks/            ← 운영 4종 (session-start-handoff-scan · session-start-context-inject · wiki-check · block-template-write) + 테스트 1종
+├── .harness/             ← check-harness-context-first 진단 리포트 저장소 (`check-reports/<날짜>-<scope>/`)
 ├── rules/                ← 행동 규칙 7개 (@import로 자동 로드, INDEX.md 카탈로그)
 ├── refs/                 ← 정적 지식 (FDA 3계층 153건: statute 117 · regulation 35 · guidance 1 sample)
 ├── wiki/                 ← 동적 지식 (5 layers: sources·pages·raw/sessions·wiki/projects·sessions·schema)
-└── prompts/              ← LLM 운영 프롬프트 fragment
+├── prompts/              ← LLM 운영 프롬프트 fragment
+├── tools/                ← 운영 자동화 도구 (generate-weights-png.py 등)
+├── assets/               ← README 이미지 (hero.jpg, weights.png)
+└── memory/               ← Claude Code auto-memory placeholder (실 메모리는 `~/.claude/projects/<id>/memory/`에 저장, 본 폴더는 fork 후 사용자가 채움)
 ```
 
 ## skill + wiki 페어 패턴
