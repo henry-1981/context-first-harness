@@ -92,13 +92,13 @@ flowchart LR
     deck --> user
 ```
 
-### 3축 맥락 유지 — 이중 축적 구조
+### 3축 맥락 유지 — 삼층 축적 구조
 
-3축은 두 층으로 작동합니다. **상층**은 맥락을 정리·반영하는 스킬 4종(`wrap` · `repo-cleanup` · `council` · `deliverable-review`)이고, **하층**은 대화 세션이 자동 수집·요약되어 다음 세션의 참고 재료가 되는 파이프라인(`seCall` → `wiki/raw/sessions/` → `codex` → `wiki/wiki/projects·sessions/`)입니다. 상층이 질을 높이는 정리 층이라면 하층은 원재료가 쌓이는 누적 층입니다. 두 층이 모두 rules · CLAUDE.md · wiki pages로 모여 다음 세션의 1축 입력으로 자동 로드되면서 순환이 닫힙니다.
+3축은 세 층으로 작동합니다. **상층**은 맥락을 정리·반영하는 스킬 4종(`wrap` · `repo-cleanup` · `council` · `deliverable-review`)입니다. **하층**은 두 경로로 나뉩니다. 하나는 세션 자동 축적 — 대화 세션이 seCall로 자동 수집·요약되어 참고 재료가 되는 파이프라인입니다. 다른 하나는 지식 큐레이션 — HB가 직접 `wiki/sources/`에 소스를 투입하면 LLM이 도메인 지식을 `wiki/pages/`로 정제하는 경로입니다. 세션 자동 축적이 원재료의 양을 쌓는다면, 지식 큐레이션은 도메인 판단과 해석이 농축된 질을 쌓습니다.
 
 ```mermaid
 flowchart LR
-    subgraph upper ["① 상층 · 정리 (질)"]
+    subgraph upper ["① 상층 · 정리 스킬 (질)"]
         direction TB
         wrap[wrap]
         cleanup[repo-cleanup]
@@ -106,26 +106,34 @@ flowchart LR
         review[deliverable-review]
     end
 
-    subgraph lower ["② 하층 · 축적 (양)"]
+    subgraph lower_a ["② 하층 A · 세션 자동 축적"]
         direction LR
         session[대화 세션] --> secall[seCall] --> raw[raw/sessions/] --> codex[codex] --> processed[wiki/projects·sessions/]
     end
 
-    upper ==>|학습 반영| target[("③ 지식 자산<br/>rules · CLAUDE.md · wiki pages")]
-    lower -.참고 재료.-> target
+    subgraph lower_b ["③ 하층 B · 지식 큐레이션"]
+        direction LR
+        hb([HB 소스 투입]) --> sources[wiki/sources/] --> llm_ing[LLM 인제스트] --> pages[wiki/pages/]
+    end
+
+    upper ==>|학습 반영| target[("④ 지식 자산<br/>rules · CLAUDE.md · wiki/pages")]
+    lower_a -.참고 재료.-> target
+    lower_b ==>|페이지 직접 축적| target
     target ==>|다음 세션 1축 로드| next([다음 세션])
 
     classDef quality fill:#e3f2fd,stroke:#1976d2
     classDef volume fill:#fff3e0,stroke:#f57c00
+    classDef curation fill:#f3e5f5,stroke:#7b1fa2
     classDef asset fill:#e8f5e9,stroke:#388e3c,stroke-width:2px
     class upper quality
-    class lower volume
+    class lower_a volume
+    class lower_b curation
     class target asset
 ```
 
 ## 전체 Workflow
 
-세 자산은 함께 돕니다. 3축이 개별 자산 묶음이라면, 실제 세션은 이 자산들이 하나의 workflow로 묶여 돌아갑니다. 특히 3축 맥락 유지는 대화가 끝날 때마다 자동으로 아카이빙되는 파이프라인을 타고 세션을 거듭할수록 강해지는 누적 구조입니다.
+세 자산은 함께 돕니다. 3축이 개별 자산 묶음이라면, 실제 세션은 이 자산들이 하나의 workflow로 묶여 돌아갑니다. 3축 맥락 유지는 두 경로로 쌓입니다 — 세션이 끝날 때마다 seCall이 자동으로 아카이빙하는 경로(3축 A)와, HB가 직접 소스를 투입해 LLM이 도메인 지식 페이지를 만드는 지식 큐레이션 경로(3축 B)입니다. 두 경로 모두 1축 입력으로 자동 로드되면서 세션을 거듭할수록 강해집니다.
 
 ```mermaid
 flowchart LR
@@ -139,9 +147,14 @@ flowchart LR
         axis1["1축 입력<br/>rules · refs · wiki · CLAUDE.md"] ==> llm{{LLM 세션}} ==> axis2["2축 출력<br/>docx · pdf · 발표자료"] ==> user([사용자])
     end
 
-    subgraph accum_row ["3축 맥락 축적"]
+    subgraph accum_a ["3축 A · 세션 자동 축적"]
         direction LR
-        secall[seCall] --> raw[raw/] --> codex[codex] --> processed[wiki/]
+        secall[seCall] --> raw[raw/] --> codex[codex] --> processed[wiki/projects·sessions/]
+    end
+
+    subgraph accum_b ["3축 B · 지식 큐레이션"]
+        direction LR
+        hb2([HB]) -->|소스 투입| sources2[wiki/sources/] --> pages2[wiki/pages/]
     end
 
     channel -.자료.-> axis1
@@ -149,13 +162,16 @@ flowchart LR
     llm --> secall
     processed -.참고 재료.-> axis1
     llm -.세션 종료 반영.-> axis1
+    pages2 ==>|지식 직접 로드| axis1
 
     classDef channelStyle fill:#f3e5f5,stroke:#7b1fa2
     classDef mainStyle fill:#e3f2fd,stroke:#1976d2,stroke-width:2px
     classDef accumStyle fill:#fff3e0,stroke:#f57c00
+    classDef curationStyle fill:#fce4ec,stroke:#c2185b
     class channel_row channelStyle
     class main_row mainStyle
-    class accum_row accumStyle
+    class accum_a accumStyle
+    class accum_b curationStyle
 ```
 
 이 workflow의 핵심은 **3축 맥락 유지의 이중 축적**입니다. 대화가 휘발되지 않고 다음 세 경로로 맥락 자산이 되어 쌓입니다.
