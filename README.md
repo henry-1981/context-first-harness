@@ -232,7 +232,7 @@ flowchart LR
 ├── README.md             ← 본 파일 (가설·경험·3축 시각화·workflow)
 ├── .claude/skills/       ← 12종 (3축 분포 + medical-device-ra-qa-frame 페어 사례)
 ├── .claude/agents/       ← 12종 (검증·메타 reviewer)
-├── .claude/hooks/        ← 운영 4종 (handoff-scan · context-inject · wiki-check · block-template-write) + 테스트 1종
+├── .claude/hooks/        ← 운영 4종 (session-start-handoff-scan · session-start-context-inject · wiki-check · block-template-write) + 테스트 1종
 ├── rules/                ← 행동 규칙 7개 (content-writing·naming·binary-files·qms-sop·workflow·handoff·session-entry)
 ├── refs/                 ← 정적 지식 (FDA 3계층 153건: statute 117 · regulation 35 · guidance 1 sample)
 ├── wiki/                 ← 동적 지식 (5개 층: sources·pages·raw/sessions·wiki/projects·sessions·schema, medical-device 사고 구조 1건)
@@ -246,9 +246,10 @@ flowchart LR
 
 1. 이 레포를 fork 또는 `git clone`
 2. `CLAUDE.md`의 "사용자 시작 가이드" 따라 환경 설치 (Claude Code, Python, bash, 선택 MCP)
-3. `wiki/sources/`와 `refs/`에 자기 도메인 자료 채우기
-4. 첫 작업 시 LLM이 `medical-device-ra-qa-frame` 패턴 보고 자기 도메인 thinking frame 페어 고정을 제안
-5. 세션 종료 시 `wrap` 스킬로 맥락 반영, 다음 세션은 SessionStart hook이 handoff·lessons를 자동 주입
+3. `.mcp.json`의 `<PATH_TO>` placeholder를 자기 환경 경로로 수정 (hwp 등 선택 MCP를 쓸 경우)
+4. `wiki/sources/`와 `refs/`에 자기 도메인 자료 채우기
+5. 첫 작업 시 LLM이 `medical-device-ra-qa-frame` 패턴 보고 자기 도메인 thinking frame 페어 고정을 제안
+6. 세션 종료 시 `wrap` 스킬로 맥락 반영, 다음 세션은 SessionStart hook이 handoff·lessons를 자동 주입
 
 ## 참고·영감·의존성
 
