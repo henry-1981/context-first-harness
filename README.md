@@ -245,9 +245,10 @@ flowchart LR
 1. 이 레포를 fork 또는 `git clone`
 2. `CLAUDE.md`의 "사용자 시작 가이드" 따라 환경 설치 (Claude Code, Python, bash, 선택 MCP)
 3. `.mcp.json`의 `<PATH_TO>` placeholder를 자기 환경 경로로 수정 (hwp 등 선택 MCP를 쓸 경우)
-4. `wiki/sources/`와 `refs/`에 자기 도메인 자료 채우기
-5. 첫 작업 시 LLM이 `medical-device-ra-qa-frame` 패턴 보고 자기 도메인 thinking frame 페어 고정을 제안
-6. 세션 종료 시 `wrap` 스킬로 맥락 반영, 다음 세션은 SessionStart hook이 handoff·lessons를 자동 주입
+4. (선택) 세션 자동 아카이빙을 원하면 [seCall](https://github.com/hang-in/seCall) 설치 — 대화 세션이 `wiki/raw/sessions/YYYY-MM-DD/`로 자동 수집되어 다음 세션 참고 재료가 됩니다
+5. `wiki/sources/`와 `refs/`에 자기 도메인 자료 채우기. 세션 시작 시 `wiki-check` hook이 `wiki/pages/`에서 미참조된 소스를 알려주므로 LLM에게 ingest를 요청하면 됩니다. PDF가 있으면 `pdf-to-md` 스킬로 MD 변환 후 ingest
+6. 첫 작업 시 LLM이 `medical-device-ra-qa-frame` 패턴 보고 자기 도메인 thinking frame 페어 고정을 제안
+7. 세션 종료 시 `wrap` 스킬로 맥락 반영, 다음 세션은 SessionStart hook이 handoff·lessons를 자동 주입
 
 ## 참고·영감·의존성
 
