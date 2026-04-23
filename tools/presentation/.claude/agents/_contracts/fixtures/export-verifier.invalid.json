@@ -1,0 +1,18 @@
+{
+  "status": "fail",
+  "summary_line": "PASS 3 / WARN 0 / FAIL 1",
+  "checks": {
+    "export_file_exists": "fail",
+    "slide_count_match": "pass",
+    "format_valid": "pass",
+    "size_nonzero": "pass"
+  },
+  "export_paths": [],
+  "findings": [
+    {
+      "check": "export_file_exists",
+      "severity": "fail"
+    }
+  ],
+  "retries": 0
+}

@@ -1,0 +1,6 @@
+{
+  "mode_target": "webppt",
+  "slides": [
+    { "n": 1, "html_path": "slide-01.html", "layout_type": "cover", "self_check_pngs": [] }
+  ]
+}

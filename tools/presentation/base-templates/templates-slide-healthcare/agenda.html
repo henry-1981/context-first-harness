@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 1920px; height: 1080px; overflow: hidden; word-break: keep-all; }
+.slide {
+  width: 960px; height: 540px;
+  transform: scale(2); transform-origin: 0 0;
+  overflow: hidden;
+  font-family: 'Noto Sans KR', sans-serif;
+  background: linear-gradient(180deg, #F8FBFF 0%, #EFF6FF 100%);
+  color: #1E293B;
+  padding: 40px 50px;
+  display: flex; flex-direction: column;
+  position: relative;
+}
+.top-bar {
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, #0EA5E9, #10B981);
+}
+.title { font-size: 28px; font-weight: 700; color: #1E293B; margin-bottom: 6px; }
+.subtitle { font-size: 14px; color: #64748B; margin-bottom: 14px; }
+.items {
+  display: flex; flex-direction: column; gap: 6px; flex: 1;
+}
+.item {
+  background: white; border: 1px solid #E2E8F0; border-radius: 10px;
+  padding: 10px 16px;
+  display: flex; align-items: center; gap: 14px;
+}
+.item-number {
+  width: 28px; height: 28px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 13px; color: white;
+  flex-shrink: 0;
+}
+.item-number.n1 { background: #0EA5E9; }
+.item-number.n2 { background: #38BDF8; }
+.item-number.n3 { background: #10B981; }
+.item-number.n4 { background: #34D399; }
+.item-number.n5 { background: #6366F1; }
+.item-number.n6 { background: #8B5CF6; }
+.item-title { font-size: 14px; font-weight: 600; color: #1E293B; }
+.item-desc { font-size: 12px; color: #64748B; margin-top: 1px; }
+.footer {
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 13px; color: #94A3B8;
+  border-top: 1px solid #E2E8F0; padding-top: 12px; margin-top: 16px;
+}
+.footer-pill {
+  background: #F0F9FF; color: #0EA5E9; font-weight: 600;
+  border-radius: 9999px; padding: 3px 12px; font-size: 12px;
+}
+</style>
+<script>
+// Hide agenda items with empty title (for decks with < 6 sections)
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.item').forEach(function(item) {
+    var title = item.querySelector('.item-title');
+    if (title && title.textContent.trim() === '') {
+      item.style.display = 'none';
+    }
+  });
+});
+</script>
+</head>
+<body>
+<div class="slide">
+  <div class="top-bar"></div>
+  <div class="title">{{TITLE}}</div>
+  <div class="subtitle">{{SUBTITLE}}</div>
+  <div class="items">
+    <div class="item">
+      <div class="item-number n1">1</div>
+      <div><div class="item-title">{{I1_TITLE}}</div><div class="item-desc">{{I1_DESC}}</div></div>
+    </div>
+    <div class="item">
+      <div class="item-number n2">2</div>
+      <div><div class="item-title">{{I2_TITLE}}</div><div class="item-desc">{{I2_DESC}}</div></div>
+    </div>
+    <div class="item">
+      <div class="item-number n3">3</div>
+      <div><div class="item-title">{{I3_TITLE}}</div><div class="item-desc">{{I3_DESC}}</div></div>
+    </div>
+    <div class="item">
+      <div class="item-number n4">4</div>
+      <div><div class="item-title">{{I4_TITLE}}</div><div class="item-desc">{{I4_DESC}}</div></div>
+    </div>
+    <div class="item">
+      <div class="item-number n5">5</div>
+      <div><div class="item-title">{{I5_TITLE}}</div><div class="item-desc">{{I5_DESC}}</div></div>
+    </div>
+    <div class="item">
+      <div class="item-number n6">6</div>
+      <div><div class="item-title">{{I6_TITLE}}</div><div class="item-desc">{{I6_DESC}}</div></div>
+    </div>
+  </div>
+  <div class="footer">
+    <span>{{FOOTER_LEFT}}</span>
+    <span>{{FOOTER_TAG}}</span>
+  </div>
+</div>
+</body>
+</html>

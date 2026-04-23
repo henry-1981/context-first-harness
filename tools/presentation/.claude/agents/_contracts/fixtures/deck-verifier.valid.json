@@ -1,0 +1,22 @@
+{
+  "status": "warn",
+  "summary_line": "PASS 15 / WARN 2 / FAIL 0",
+  "aql_sample_slides": [1, 3, 5, 7, 17],
+  "findings": [
+    {
+      "slide": 5,
+      "severity": "warn",
+      "code": "AI_SLOP_INTRO",
+      "evidence_path": "draft/slides/slide-05.html:23-25",
+      "quote": "오늘날의 급변하는"
+    },
+    {
+      "slide": 14,
+      "severity": "warn",
+      "code": "NUMBER_STRICT_DIFF",
+      "quote": "약 10건"
+    }
+  ],
+  "retries": 0,
+  "warnings": []
+}

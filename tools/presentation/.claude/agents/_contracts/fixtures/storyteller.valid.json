@@ -1,0 +1,27 @@
+{
+  "outline_path": "draft/outline.md",
+  "source_type": "prepared",
+  "slide_count_declared": 7,
+  "slide_count_actual": 7,
+  "slides": [
+    {
+      "n": 1,
+      "title": "SOP 교육은 왜 실패하는가",
+      "source_range": "input/input.md:5-12",
+      "takeaway": "SOP 교육 실패의 3대 원인",
+      "template": "cover",
+      "context": "",
+      "fallbacks": []
+    },
+    {
+      "n": 2,
+      "title": "분석 대상 SOP 30개의 패턴",
+      "source_range": "input/input.md:15-28",
+      "takeaway": "수치 맥락 포함 제목",
+      "template": "bullet-list",
+      "context": "SOP 30개 = 최근 2년 vendor audit에서 지적된 SOP",
+      "fallbacks": ["제목 주장형화 실패 시 원문 '분석 결과' 유지"]
+    }
+  ],
+  "warnings": []
+}

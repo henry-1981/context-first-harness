@@ -1,0 +1,7 @@
+{
+  "status": "pass",
+  "summary_line": "모두 통과",
+  "aql_sample_slides": [1, 3, 5],
+  "findings": [],
+  "retries": 0
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1920px; height: 1080px; overflow: hidden; }
+  body {
+    background: #0f172a;
+    font-family: 'Pretendard', -apple-system, sans-serif;
+    color: #f8fafc;
+    padding: 100px 120px;
+  }
+  h2 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 48px;
+    color: #e2e8f0;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+  .card {
+    background: rgba(30, 41, 59, 0.8);
+    border: 1px solid #334155;
+    border-radius: 16px;
+    padding: 40px;
+  }
+  .card h3 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #60a5fa;
+  }
+  .card p {
+    font-size: 20px;
+    color: #94a3b8;
+    line-height: 1.6;
+  }
+  .metric {
+    font-size: 80px;
+    font-weight: 900;
+    color: #a78bfa;
+    margin-bottom: 12px;
+    letter-spacing: -2px;
+    text-shadow: 0 0 40px rgba(167, 139, 250, 0.4), 0 0 80px rgba(167, 139, 250, 0.15);
+  }
+</style>
+</head>
+<body>
+  <h2>2024년 핵심 성과</h2>
+  <div class="grid">
+    <div class="card">
+      <div class="metric">142%</div>
+      <h3>매출 성장률</h3>
+      <p>전년 대비 매출이 크게 증가하며 시장 점유율을 확대했습니다.</p>
+    </div>
+    <div class="card">
+      <div class="metric">89</div>
+      <h3>NPS 점수</h3>
+      <p>고객 만족도가 업계 최고 수준을 달성했습니다.</p>
+    </div>
+    <div class="card">
+      <div class="metric">3.2M</div>
+      <h3>활성 사용자</h3>
+      <p>월간 활성 사용자가 320만 명을 돌파했습니다.</p>
+    </div>
+  </div>
+</body>
+</html>

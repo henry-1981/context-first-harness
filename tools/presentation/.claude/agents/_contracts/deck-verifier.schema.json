@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "deck-verifier.schema.json",
+  "title": "Deck-verifier agent stdout return",
+  "type": "object",
+  "required": ["status", "summary_line", "aql_sample_slides", "findings", "retries"],
+  "properties": {
+    "status": { "type": "string", "enum": ["pass", "warn", "fail"] },
+    "summary_line": { "type": "string", "pattern": "^PASS \\d+ / WARN \\d+ / FAIL \\d+$" },
+    "aql_sample_slides": {
+      "type": "array",
+      "items": { "type": "integer", "minimum": 1 },
+      "minItems": 1
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["slide", "severity", "code"],
+        "properties": {
+          "slide": { "type": "integer", "minimum": 1 },
+          "severity": { "type": "string", "enum": ["warn", "fail"] },
+          "code": { "type": "string" },
+          "evidence_path": { "type": "string", "pattern": "\\.html(:\\d+(-\\d+)?)?$" },
+          "quote": { "type": "string", "minLength": 5, "maxLength": 30 }
+        },
+        "anyOf": [
+          { "required": ["evidence_path"] },
+          { "required": ["quote"] }
+        ]
+      }
+    },
+    "retries": { "type": "integer", "minimum": 0 },
+    "warnings": { "type": "array", "items": { "type": "string" } }
+  }
+}

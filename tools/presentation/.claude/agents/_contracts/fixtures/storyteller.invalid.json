@@ -1,0 +1,15 @@
+{
+  "outline_path": "draft/outline.md",
+  "source_type": "prepared",
+  "slide_count_declared": 7,
+  "slide_count_actual": 7,
+  "slides": [
+    {
+      "n": 1,
+      "title": "test",
+      "source_range": "섹션 1의 첫 번째 단락",
+      "takeaway": "t",
+      "template": "cover"
+    }
+  ]
+}

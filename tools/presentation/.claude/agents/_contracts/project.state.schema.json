@@ -1,0 +1,149 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "project.state.schema.json",
+  "title": "Presentation Project State",
+  "type": "object",
+  "required": ["project", "created", "spec_version", "source", "config", "plan", "design", "export", "history"],
+  "properties": {
+    "project": { "type": "string", "minLength": 1 },
+    "created": { "type": "string", "format": "date-time" },
+    "spec_version": { "type": "string", "const": "presentation-refactor-v1" },
+    "source": {
+      "type": "object",
+      "required": ["type", "classification"],
+      "properties": {
+        "type": { "type": "string", "enum": ["file", "url", "topic"] },
+        "path": { "type": "string" },
+        "classification": { "type": "string", "enum": ["prepared", "raw", "topic"] }
+      }
+    },
+    "config": {
+      "type": "object",
+      "required": ["mode", "mode_variant"],
+      "properties": {
+        "mode": { "type": "string", "enum": ["pptx", "webppt"] },
+        "mode_variant": { "type": "string", "enum": ["templateSet", "free", "webppt-free"] },
+        "direction": { "type": "string" },
+        "dials": { "type": "object" }
+      }
+    },
+    "plan": {
+      "type": "object",
+      "required": ["status"],
+      "properties": {
+        "status": { "type": "string", "enum": ["ready", "blocked", "passed", "failed"] },
+        "outline": {
+          "type": "object",
+          "required": ["slide_count_declared", "slide_count_actual", "slides"],
+          "properties": {
+            "slide_count_declared": { "type": "integer", "minimum": 1 },
+            "slide_count_actual": { "type": "integer", "minimum": 0 },
+            "slides": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["n", "title", "source_range", "takeaway", "template"],
+                "properties": {
+                  "n": { "type": "integer", "minimum": 1 },
+                  "title": { "type": "string" },
+                  "source_range": { "type": "string" },
+                  "takeaway": { "type": "string" },
+                  "template": { "type": "string" },
+                  "context": { "type": "string" },
+                  "fallbacks": { "type": "array", "items": { "type": "string" } }
+                }
+              }
+            }
+          }
+        },
+        "verifiers": {
+          "type": "object",
+          "properties": {
+            "outline": { "$ref": "#/definitions/verifierResult" }
+          }
+        }
+      }
+    },
+    "design": {
+      "type": "object",
+      "required": ["status"],
+      "properties": {
+        "status": { "type": "string", "enum": ["ready", "passed", "failed"] },
+        "slides": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["n", "html_path", "agent"],
+            "properties": {
+              "n": { "type": "integer", "minimum": 1 },
+              "html_path": { "type": "string" },
+              "agent": { "type": "string" },
+              "self_check_pngs": { "type": "array", "items": { "type": "string" } },
+              "verifier_status": { "type": "string", "enum": ["pass", "warn", "fail"] },
+              "override_css": { "type": "array", "items": { "type": "string" } }
+            }
+          }
+        },
+        "verifiers": {
+          "type": "object",
+          "properties": {
+            "deck": { "$ref": "#/definitions/verifierResult" }
+          }
+        },
+        "editor_history": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["ts", "slide", "engine", "intent"],
+            "properties": {
+              "ts": { "type": "string", "format": "date-time" },
+              "slide": { "type": "integer" },
+              "engine": { "type": "string", "enum": ["codex", "claude", "manual"] },
+              "intent": { "type": "string" },
+              "diff_bytes": { "type": "integer" }
+            }
+          }
+        }
+      }
+    },
+    "export": {
+      "type": "object",
+      "properties": {
+        "formats": { "type": "array", "items": { "type": "string", "enum": ["webppt", "pptx", "pdf"] } },
+        "files": { "type": "object" },
+        "verifiers": {
+          "type": "object",
+          "properties": {
+            "export": { "$ref": "#/definitions/verifierResult" }
+          }
+        }
+      }
+    },
+    "history": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["ts", "event"],
+        "properties": {
+          "ts": { "type": "string", "format": "date-time" },
+          "event": { "type": "string" },
+          "retry": { "type": "integer" },
+          "reason": { "type": "string" }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "verifierResult": {
+      "type": "object",
+      "required": ["status", "retries"],
+      "properties": {
+        "status": { "type": "string", "enum": ["pass", "warn", "fail"] },
+        "retries": { "type": "integer", "minimum": 0 },
+        "warnings": { "type": "array", "items": { "type": "string" } },
+        "aql_sample_slides": { "type": "array", "items": { "type": "integer" } },
+        "evidence_path": { "type": "string" }
+      }
+    }
+  }
+}

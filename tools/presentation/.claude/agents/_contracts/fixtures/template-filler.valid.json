@@ -1,0 +1,23 @@
+{
+  "deck_data_path": "draft/deck-data.json",
+  "template_set": "warm",
+  "mode_variant": "templateSet",
+  "slides_count": 7,
+  "override_css": [
+    {
+      "slide": 3,
+      "selector": ".bullet .dot",
+      "css": "background: #7DD3FA !important;"
+    }
+  ],
+  "conflict_check": [
+    {
+      "slide": 3,
+      "section_color": "#0EA5E9",
+      "conflict_element": ".bullet .dot",
+      "action": "override"
+    }
+  ],
+  "context_missing": [],
+  "warnings": []
+}

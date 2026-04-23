@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 1920px; height: 1080px; overflow: hidden; word-break: keep-all; }
+.slide {
+  width: 960px; height: 540px;
+  transform: scale(2); transform-origin: 0 0;
+  overflow: hidden;
+  font-family: 'Noto Sans KR', sans-serif;
+  background: linear-gradient(180deg, #F8FBFF 0%, #EFF6FF 100%);
+  color: #1E293B;
+  padding: 40px 50px;
+  display: flex; flex-direction: column;
+  position: relative;
+}
+.top-bar {
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, #0EA5E9, #10B981);
+}
+.title { font-size: 28px; font-weight: 700; color: #1E293B; margin-bottom: 4px; display: flex; align-items: center; gap: 8px; }
+.subtitle { font-size: 14px; color: #64748B; margin-bottom: 20px; }
+.body-custom {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+}
+.footer {
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 13px; color: #94A3B8;
+  border-top: 1px solid #E2E8F0; padding-top: 12px; margin-top: 16px;
+}
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="top-bar"></div>
+  <div class="title">{{TITLE}}</div>
+  <div class="body-custom">
+    {{BODY_HTML}}
+  </div>
+  <div class="footer">
+    <span>{{FOOTER_LEFT}}</span>
+    <span>{{FOOTER_TAG}}</span>
+  </div>
+</div>
+</body>
+</html>

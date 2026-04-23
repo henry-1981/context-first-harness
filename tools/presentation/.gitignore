@@ -1,0 +1,13 @@
+
+# presentation 하네스 런타임 산출물
+_workspace/*/02b_slides/_self_check/
+_workspace/*/_self_check/
+_workspace-copy/
+
+# Chunk 5 — slides-grab Layer 1/2 복원
+references/slides-grab-upstream/
+_workspace/slides-grab-*.log
+_workspace/slides-grab-*.pid
+
+# nativePPTX mode_variant 브레인스토밍 — MOAI-Office pptx-designer 참조 clone
+references/cowork-plugins-upstream/

@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "visual-designer.schema.json",
+  "title": "Visual-designer agent stdout return",
+  "type": "object",
+  "required": ["mode_target", "slides"],
+  "properties": {
+    "mode_target": { "type": "string", "const": "pptx" },
+    "slides": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["n", "html_path", "layout_type", "self_check_pngs"],
+        "properties": {
+          "n": { "type": "integer", "minimum": 1 },
+          "html_path": { "type": "string", "pattern": "slide-\\d+\\.html$" },
+          "layout_type": { "type": "string" },
+          "self_check_pngs": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "warnings": { "type": "array", "items": { "type": "string" } }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "export-verifier.schema.json",
+  "title": "Export-verifier agent stdout return",
+  "type": "object",
+  "required": ["status", "summary_line", "checks", "export_paths", "findings", "retries"],
+  "properties": {
+    "status": { "type": "string", "enum": ["pass", "warn", "fail"] },
+    "summary_line": { "type": "string", "pattern": "^PASS \\d+ / WARN \\d+ / FAIL \\d+$" },
+    "checks": {
+      "type": "object",
+      "required": ["export_file_exists", "slide_count_match", "format_valid", "size_nonzero"],
+      "properties": {
+        "export_file_exists": { "type": "string", "enum": ["pass", "fail"] },
+        "slide_count_match": { "type": "string", "enum": ["pass", "warn", "fail"] },
+        "format_valid": { "type": "string", "enum": ["pass", "fail"] },
+        "size_nonzero": { "type": "string", "enum": ["pass", "fail"] }
+      }
+    },
+    "export_paths": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["check", "severity"],
+        "properties": {
+          "check": { "type": "string" },
+          "severity": { "type": "string", "enum": ["warn", "fail"] },
+          "evidence_path": { "type": "string" },
+          "quote": { "type": "string", "minLength": 5, "maxLength": 30 }
+        },
+        "anyOf": [
+          { "required": ["evidence_path"] },
+          { "required": ["quote"] }
+        ]
+      }
+    },
+    "retries": { "type": "integer", "minimum": 0 },
+    "warnings": { "type": "array", "items": { "type": "string" } },
+    "aql_sample": {
+      "type": "object",
+      "properties": {
+        "lot_size": { "type": "integer", "minimum": 0 },
+        "sample_size": { "type": "integer", "minimum": 0 },
+        "sampled_indices": { "type": "array", "items": { "type": "integer" } }
+      }
+    }
+  }
+}

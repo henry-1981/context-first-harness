@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 1920px; height: 1080px; overflow: hidden; }
+.slide {
+  width: 960px; height: 540px;
+  transform: scale(2); transform-origin: 0 0;
+  overflow: hidden;
+  font-family: 'Pretendard Variable', Pretendard, sans-serif;
+  background: #FFFBF5;
+  padding: 36px 44px;
+  display: flex; flex-direction: column;
+  gap: 18px;
+}
+.body {
+  flex: 1; display: flex; flex-direction: column;
+}
+.header {
+  display: flex; align-items: center; gap: 14px;
+}
+.header .emoji {
+  width: 48px; height: 48px; border-radius: 50%;
+  background: #F5F0EB;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 26px; flex-shrink: 0;
+}
+.header .title { font-size: 28px; font-weight: 800; color: #2C2420; }
+.header .subtitle { font-size: 15px; color: #8C8580; margin-top: 2px; }
+.items {
+  display: flex; flex-direction: column; gap: 8px;
+}
+.item {
+  background: white; border: 1px solid #E8E4E0; border-radius: 12px;
+  padding: 14px 20px;
+  display: flex; align-items: center; gap: 14px;
+}
+.item-number {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: #3B82F6; color: white;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 14px; flex-shrink: 0;
+}
+.item-content .item-title { font-size: 16px; font-weight: 700; color: #2C2420; }
+.item-content .item-desc { font-size: 13px; color: #8C8580; margin-top: 1px; }
+.footer {
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 13px; color: #8C8580;
+  border-top: 1px solid #E8E4E0; padding-top: 12px;
+}
+.footer-tag { color: #3B82F6; font-weight: 700; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header">
+    <div class="emoji">{{EMOJI}}</div>
+    <div>
+      <div class="title">{{TITLE}}</div>
+      <div class="subtitle">{{SUBTITLE}}</div>
+    </div>
+  </div>
+  <div class="body">
+    <div class="items">
+      <div class="item">
+        <div class="item-number">1</div>
+        <div class="item-content">
+          <div class="item-title">{{I1_TITLE}}</div>
+          <div class="item-desc">{{I1_DESC}}</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-number">2</div>
+        <div class="item-content">
+          <div class="item-title">{{I2_TITLE}}</div>
+          <div class="item-desc">{{I2_DESC}}</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-number">3</div>
+        <div class="item-content">
+          <div class="item-title">{{I3_TITLE}}</div>
+          <div class="item-desc">{{I3_DESC}}</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-number">4</div>
+        <div class="item-content">
+          <div class="item-title">{{I4_TITLE}}</div>
+          <div class="item-desc">{{I4_DESC}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <span>{{FOOTER_LEFT}}</span>
+    <span class="footer-tag">{{FOOTER_TAG}}</span>
+  </div>
+</div>
+</body>
+</html>

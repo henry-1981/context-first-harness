@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "webppt-designer.schema.json",
+  "title": "WebPPT-designer agent stdout return",
+  "type": "object",
+  "required": ["mode_target", "slides"],
+  "properties": {
+    "mode_target": { "type": "string", "const": "webppt" },
+    "slides": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["n", "html_path", "layout_type", "self_check_pngs", "animated_props", "data_animate", "reduced_motion"],
+        "properties": {
+          "n": { "type": "integer", "minimum": 1 },
+          "html_path": { "type": "string", "pattern": "slide-\\d+\\.html$" },
+          "layout_type": { "type": "string" },
+          "self_check_pngs": { "type": "array", "items": { "type": "string" } },
+          "animated_props": {
+            "type": "array",
+            "items": { "type": "string", "enum": ["opacity", "transform", "filter", "clip-path"] }
+          },
+          "data_animate": { "type": "boolean" },
+          "reduced_motion": { "type": "boolean" }
+        }
+      }
+    },
+    "warnings": { "type": "array", "items": { "type": "string" } }
+  }
+}

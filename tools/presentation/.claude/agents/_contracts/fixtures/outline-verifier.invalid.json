@@ -1,0 +1,13 @@
+{
+  "status": "pass",
+  "summary_line": "PASS 6 / WARN 0 / FAIL 0",
+  "checks": {
+    "takeaway_present": "pass",
+    "message_dedup": "pass",
+    "image_placeholder_path": "n/a",
+    "paraphrase_token_overlap": "pass",
+    "footer_tag_consistent": "pass"
+  },
+  "findings": [],
+  "retries": 0
+}
