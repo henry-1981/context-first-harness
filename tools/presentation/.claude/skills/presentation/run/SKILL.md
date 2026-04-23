@@ -40,7 +40,7 @@ state.json plan.status가 "passed"가 아닌 상태로 Step 2 진입 금지(Spec
 
 ```
 Read .claude/skills/presentation/design/SKILL.md
-→ 본문 지시 이행 (P5~P7 + HB "완료" 선언 gate)
+→ 본문 지시 이행 (P5~P7 + 사용자 "완료" 선언 gate)
 → 완료 조건: state.json design.status == "passed"
 ```
 
@@ -78,7 +78,7 @@ state.json: {project_root}/state.json
 |---|---|
 | "HB가 바쁠 테니 outline 자동 승인 후 진행" | P2 gate 위반. HB 응답 없이 P3 진입 금지 |
 | "A/B 중 더 나아 보이는 쪽 자동 선택" | P4 gate 위반. HB 명시 선택 필수 |
-| "P7 진입(Y) 후 에디터 '완료' 없이 export 진행" | P7 진입 케이스에서는 HB "완료" 선언 필수. 단 P6-B에서 `n` 선택으로 에디터 자체를 skip한 경우는 정상 경로(Spec §3.3 "(선택)")이며 gate 위반 아님 |
+| "P7 진입(Y) 후 에디터 '완료' 없이 export 진행" | P7 진입 케이스에서는 사용자 "완료" 선언 필수. 단 P6-B에서 `n` 선택으로 에디터 자체를 skip한 경우는 정상 경로(Spec §3.3 "(선택)")이며 gate 위반 아님 |
 | "하위 스킬을 서브에이전트로 돌려 병렬화" | 서브에이전트는 HB gate 처리 불가. 본 스킬은 메인 고정 |
 | "기존 프로젝트가 있어도 run으로 이어가자" | Re-entry 미지원. 개별 스킬로 진입 |
 
@@ -87,7 +87,7 @@ state.json: {project_root}/state.json
 | 상황 | 대응 |
 |---|---|
 | 기존 프로젝트 1건 이상 발견 | 중단 + 개별 스킬 안내 |
-| 하위 스킬이 3차 FAIL root cause 리포트 생성 | HB 선택 gate에서 대기, 선택 수신 후 해당 옵션 실행(옵션별로 plan/design/export 중 재진입 결정) |
+| 하위 스킬이 3차 FAIL root cause 리포트 생성 | 사용자 선택 gate에서 대기, 선택 수신 후 해당 옵션 실행(옵션별로 plan/design/export 중 재진입 결정) |
 | 하위 스킬 Read 실패(파일 부재) | 즉시 중단, HB에 파일 경로 보고 |
 
 ## Gate 규율 — Red Flags

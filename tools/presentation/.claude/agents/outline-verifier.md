@@ -70,7 +70,7 @@ outline.md의 각 `## Slide N` 블록에서 `- **takeaway**: ...` 라인 추출.
 
 ## 계약 — 대안 제시 금지
 
-`deck-verifier`와 동일. FAIL 시 문제 지적 + check 코드만 기록. 대안 생성은 storyteller 재호출(stage-owner `presentation:plan`이 수행) 또는 HB 수동.
+`deck-verifier`와 동일. FAIL 시 문제 지적 + check 코드만 기록. 대안 생성은 storyteller 재호출(stage-owner `presentation:plan`이 수행) 또는 사용자 수동.
 
 ## 재시도 계약 (Spec §5.2)
 

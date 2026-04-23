@@ -48,7 +48,7 @@ mode_target: outline
 
 - 카테고리형 → 주장형 전환 시도 (예: "Gemini 현황" → "Gemini 2년, 무엇이 남았는가")
 - 가능하면 원문 문장에서 그대로 가져온다
-- **탈출구**: 주장형 전환 시 어색한 대안밖에 안 나오면 원문 제목을 유지하고 해당 슬라이드의 `fallbacks` 배열에 사유 기록 (예: `"제목 주장형화 실패 — 원문 '분석 결과' 유지, HB 검토 요청"`). 어색한 대안을 강제로 만들지 마라
+- **탈출구**: 주장형 전환 시 어색한 대안밖에 안 나오면 원문 제목을 유지하고 해당 슬라이드의 `fallbacks` 배열에 사유 기록 (예: `"제목 주장형화 실패 — 원문 '분석 결과' 유지, 사용자 검토 요청"`). 어색한 대안을 강제로 만들지 마라
 
 ## 소스 범위 (source_range) 증거 의무 (S1 대응)
 
@@ -63,7 +63,7 @@ outline-verifier가 이 필드로 원문 커버리지·중복·paraphrase 검사
 
 `source_type: topic`에서만 적용. prepared·raw는 원문 보존이 우선하므로 본 섹션 적용 대상 아님.
 
-- 번역투 금지, 과장 수식 금지 등 상세는 `tools/presentation/CLAUDE.md §공통 규율 규율 3` + `Project/rules/content-writing.md` 참조
+- 번역투 금지, 과장 수식 금지 등 상세는 `tools/presentation/CLAUDE.md §공통 규율 규율 3` + `rules/content-writing.md` 참조
 - 본 섹션은 해당 규칙의 "topic 모드에서 활용" 확인 역할
 
 ## 슬라이드 시퀀스 결정 규칙

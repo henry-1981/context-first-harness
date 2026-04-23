@@ -7,7 +7,7 @@ mode_target: verifier
 
 # Deck Verifier — 품질 검증자 (증거 기반)
 
-완성된 슬라이드 덱이 outline 메시지를 충실히 반영하는지, HTML 규격을 준수하는지, AI Slop이 없는지 검증한다. **대안 제시·디자인 판단 금지** — HB 영역.
+완성된 슬라이드 덱이 outline 메시지를 충실히 반영하는지, HTML 규격을 준수하는지, AI Slop이 없는지 검증한다. **대안 제시·디자인 판단 금지** — 사용자 영역.
 
 ## 공통 규율
 
@@ -23,7 +23,7 @@ mode_target: verifier
 
 ## 계약 — 대안 제시 금지 (R2 대응)
 
-WARN·FAIL 시 **구체 대안을 제시하지 않는다.** 문제 지적 + 어느 체크리스트 코드에 해당하는지만 기록. 대안 생성은 producer agent 재호출(storyteller·template-filler·visual-designer·webppt-designer) 또는 HB 수동 수정이 담당.
+WARN·FAIL 시 **구체 대안을 제시하지 않는다.** 문제 지적 + 어느 체크리스트 코드에 해당하는지만 기록. 대안 생성은 producer agent 재호출(storyteller·template-filler·visual-designer·webppt-designer) 또는 사용자 수동 수정이 담당.
 
 근거: Audit §2.5 R2 "안티패턴 수정 제안이 블로그 제목·마케팅 카피 수준… 원본보다 못한 대안" 재발 방지.
 
@@ -62,7 +62,7 @@ state.json `config.mode_variant`로 분기:
 
 ### 텍스트 품질 (모든 모드, 코드: `TEXT_*`)
 
-본 카테고리 상세 리스트는 `Project/rules/content-writing.md` 준수 여부로 축약(R 체크리스트 drift 방지). 주요 코드:
+본 카테고리 상세 리스트는 `rules/content-writing.md` 준수 여부로 축약(R 체크리스트 drift 방지). 주요 코드:
 - `TEXT_TRANSLATION_STYLE` (번역투), `TEXT_VERBATIM` (AI 수식어), `TEXT_AI_INTRO` (AI 도입부), `TEXT_NESTED_POSSESSIVE` (소유격 중첩), `TEXT_REPEATED_STRUCTURE` (동일 구조 3회)
 - `TEXT_OUTLINE_UNKNOWN_SENTENCE`: outline에 없는 문장이 슬라이드에 생성 → **FAIL** (R3 대응)
 
@@ -150,7 +150,7 @@ findings 각 항목:
 ## 판정
 
 - **PASS**: 모든 필수 항목 통과, AQL Critical 0건
-- **WARN**: 비필수 항목 위반 (진행 가능, HB 판단)
+- **WARN**: 비필수 항목 위반 (진행 가능, 사용자 판단)
 - **FAIL**: 필수 항목 위반 → producer agent 재호출. `AP_TOPIC_LABEL`은 WARN이지만 `TEXT_OUTLINE_UNKNOWN_SENTENCE`, `DESIGN_NO_TRANSITION_ALL`, `SLOP_*` 일부, `CSS_NO_BODY_CHILD_SELECTOR`, `MOTION_COMPOSITOR_FRIENDLY`는 FAIL
 
 재시도 2회 상한, 3차 FAIL 시 root cause 리포트 (spec §5.2).
@@ -159,4 +159,4 @@ findings 각 항목:
 
 - HTML 파일 읽기 실패: 해당 슬라이드를 `warnings`에 미검증 기록
 - outline 파일 없음: 규격 검증만 수행, 메시지 충실도 스킵
-- state.json 부재: 재진입 시나리오, HB 안내 (spec §3.4 보조 heuristic)
+- state.json 부재: 재진입 시나리오, 사용자 안내 (spec §3.4 보조 heuristic)

@@ -5,7 +5,7 @@ description: "프레젠테이션 포맷 변환 스킬 — WebPPT/PPTX/PDF 변환
 
 # presentation:export — 내보내기 단계 Stage-Owner 스킬
 
-design 단계에서 PASS한 풀 덱(`draft/slides/slide-*.html`)을 HB 선택 포맷으로 변환하고, export-verifier로 무결성 검증한다. 본 스킬 완료 시 `export.verifiers.export.status = "passed"`.
+design 단계에서 PASS한 풀 덱(`draft/slides/slide-*.html`)을 사용자 선택 포맷으로 변환하고, export-verifier로 무결성 검증한다. 본 스킬 완료 시 `export.verifiers.export.status = "passed"`.
 
 ## 실행 모드
 
@@ -43,14 +43,14 @@ state.json `config.mode` 읽어 선택지 분기:
 ⚠️ PPTX 변환은 WebPPT 모드에서 지원되지 않습니다 (백드롭 필터·clip-path 손실).
 ```
 
-**🚧 GATE: HB 선택 없이 변환 진입 금지.** 복수 선택(예: "1,3") 허용.
+**🚧 GATE: 사용자 선택 없이 변환 진입 금지.** 복수 선택(예: "1,3") 허용.
 
 선택 직후 state.json에 기록:
 
 ```js
 sm.merge('{state_path}', {
   export: {
-    formats: ['webppt', 'pdf'],  // HB 선택값
+    formats: ['webppt', 'pdf'],  // 사용자 선택값
     files: {}
   },
   history_append: { event: 'export_formats_selected', formats: [...] }
@@ -178,7 +178,7 @@ export 단계 완료. 본 스킬이 presentation 파이프라인의 마지막입
 |---|---|
 | 진입 시 `design.status != "passed"` | 즉시 중단, HB에 design 선행 안내 |
 | 변환 command 실패(예: build-webppt.py 에러) | stderr 캡처 + state.json `history`에 `export_convert_fail` + HB 통보 + 재시도 1회 |
-| export-verifier 3차 FAIL | Root cause 리포트 + HB 선택 gate |
+| export-verifier 3차 FAIL | Root cause 리포트 + 사용자 선택 gate |
 | 결과 파일 자동 오픈 실패 | 경로만 HB에 안내 후 수동 오픈 요청 |
 | WebPPT 모드에서 PPTX 선택 시도 | 선택지에 없음, 무시 |
 
@@ -187,7 +187,7 @@ export 단계 완료. 본 스킬이 presentation 파이프라인의 마지막입
 | Red Flag | 대응 |
 |---|---|
 | `design.status != "passed"`인데 진입 | 즉시 중단 |
-| HB 포맷 선택 없이 변환 시작 | 즉시 중단 |
+| 사용자 포맷 선택 없이 변환 시작 | 즉시 중단 |
 | export-verifier FAIL인데 export.status passed 상신 | spec 위반, 롤백 |
 | 결과 파일 미오픈 | 반드시 `start ""` 실행 |
 | WebPPT 모드에서 PPTX 생성 시도 | 사용자에게 경고 + 시도 차단 |
