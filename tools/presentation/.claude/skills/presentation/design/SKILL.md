@@ -9,7 +9,7 @@ plan 단계에서 확정된 mode/direction/outline으로 풀 덱을 생성하고
 
 ## 실행 모드
 
-**Main thread에서 직접 실행.** producer(visual-designer/webppt-designer/template-filler), verifier(deck-verifier)는 `Agent()` 서브에이전트로 호출. HB gate(P7 "완료" 선언) 상호작용이 있으므로 메인에서 돌려야 한다.
+**Main thread에서 직접 실행.** producer(visual-designer/webppt-designer/template-filler), verifier(deck-verifier)는 `Agent()` 서브에이전트로 호출. 사용자 gate(P7 "완료" 선언) 상호작용이 있으므로 메인에서 돌려야 한다.
 
 ## 진입 Gate (HARD-GATE)
 
@@ -17,8 +17,8 @@ plan 단계에서 확정된 mode/direction/outline으로 풀 덱을 생성하고
 
 | 상황 | 처리 |
 |---|---|
-| state.json 0건 또는 `plan.status != "passed"` | **즉시 중단**. HB에게 현 status 보고 + "plan 단계를 먼저 완료하세요" 안내. `presentation:plan` 호출 지시 |
-| state.json 2건 이상 | 프로젝트 목록 HB 제시 후 선택 |
+| state.json 0건 또는 `plan.status != "passed"` | **즉시 중단**. 사용자에게 현 status 보고 + "plan 단계를 먼저 완료하세요" 안내. `presentation:plan` 호출 지시 |
+| state.json 2건 이상 | 프로젝트 목록 사용자 제시 후 선택 |
 | state.json 1건 + `plan.status == "passed"` | `design.status` 분기로 진입 |
 
 `design.status` 분기:
@@ -26,7 +26,7 @@ plan 단계에서 확정된 mode/direction/outline으로 풀 덱을 생성하고
 | design.status | 처리 |
 |---|---|
 | 미기재 / `"ready"` | 신규 풀 덱 생성(P5부터) |
-| `"passed"` | **에디터 모드 직진입**(P7만). HB에게 "기존 덱 미세 수정 모드입니다" 안내 |
+| `"passed"` | **에디터 모드 직진입**(P7만). 사용자에게 "기존 덱 미세 수정 모드입니다" 안내 |
 | `"failed"` | 마지막 실패 지점부터 재개. `history` 배열 말미 `deck_verifier_fail` 또는 `design_fail` 이벤트로 위치 판정 |
 
 **"이 장만 다시" 명시 요청 시 부분 재생성 모드**(D pain) — 아래 §부분 재생성 섹션.
@@ -84,7 +84,7 @@ Agent(
 )
 ```
 
-AQL 샘플링은 verifier 내부에서 수행(aql-sampler.js, lot=슬라이드 수). **Pre-flight 토큰 gate**(Spec §5.3): sample n ≥ 20이면 verifier 실행 **전** token-estimator.js로 예상 토큰 계산 후 HB confirm.
+AQL 샘플링은 verifier 내부에서 수행(aql-sampler.js, lot=슬라이드 수). **Pre-flight 토큰 gate**(Spec §5.3): sample n ≥ 20이면 verifier 실행 **전** token-estimator.js로 예상 토큰 계산 후 사용자 confirm.
 
 verifier return validation 후 merge:
 
@@ -112,7 +112,7 @@ retries 상한 2회 고정(Spec §5.2). 자동 재시도 로직이 상한을 넘
 
 ## Phase P6-B: 에디터 사용 여부 사용자 선택 (Spec §3.3 "(선택)" 경로)
 
-deck-verifier PASS 확인 후 HB에게 명시 질문:
+deck-verifier PASS 확인 후 사용자에게 명시 질문:
 
 ```
 deck-verifier PASS. slides-grab 에디터로 미세 수정하시겠습니까? (Y/n)
@@ -120,7 +120,7 @@ deck-verifier PASS. slides-grab 에디터로 미세 수정하시겠습니까? (Y
 - n: 에디터 skip, 즉시 design.status = "passed" 전이 (Spec §3.3 "(선택)" 허용)
 ```
 
-**🚧 GATE: HB 응답 없이 다음 분기 진행 금지.**
+**🚧 GATE: 사용자 응답 없이 다음 분기 진행 금지.**
 
 응답 `n` (또는 "에디터 안 씀" 류 거절):
 
@@ -188,7 +188,7 @@ sm.merge('{state_path}', {
 
 ## 부분 재생성 모드 (D pain)
 
-HB가 "slide-05만 다시 생성해줘" 류 요청 시:
+사용자가 "slide-05만 다시 생성해줘" 류 요청 시:
 
 1. state.json 읽어 해당 slide의 producer agent 식별 (`design.slides[n-1].agent`)
 2. 해당 producer 재호출, **해당 slide만** 생성
@@ -196,7 +196,7 @@ HB가 "slide-05만 다시 생성해줘" 류 요청 시:
 4. deck-verifier를 **해당 slide만** 대상으로 재호출(AQL 샘플 강제: `[5]`)
 5. PASS 시 `design.slides[4]` 필드 갱신 + `history_append: { event: 'partial_regen', slide: 5 }`
 
-부분 재생성은 design.status 전이 없이 수행(이미 passed였어도 유지). HB가 추가 에디터 수정 원하면 P7로, 바로 export 원하면 `presentation:export` 호출.
+부분 재생성은 design.status 전이 없이 수행(이미 passed였어도 유지). 사용자가 추가 에디터 수정 원하면 P7로, 바로 export 원하면 `presentation:export` 호출.
 
 ## 스킬 체인 안내
 
@@ -214,11 +214,11 @@ design 단계 완료. state.json design.status = "passed".
 
 | 상황 | 대응 |
 |---|---|
-| 진입 시 `plan.status != "passed"` | 즉시 중단, HB에 plan 선행 안내 |
+| 진입 시 `plan.status != "passed"` | 즉시 중단, 사용자에 plan 선행 안내 |
 | producer 1회 실패 | 재호출 1회 → 재실패 시 해당 slide skip + findings 기록 |
 | deck-verifier 3차 FAIL | Root cause 리포트 + 사용자 선택 gate (Spec §5.2 5옵션) |
 | slides-grab 포트 점유 | stop 스크립트 실행 후 재기동, 그래도 실패 시 다른 포트 할당 |
-| state.json schema validation 실패 | merge 롤백 + `validation_fail` 이벤트 + HB 통보 |
+| state.json schema validation 실패 | merge 롤백 + `validation_fail` 이벤트 + 사용자 통보 |
 
 ## Gate 규율 — Red Flags
 
@@ -226,8 +226,8 @@ design 단계 완료. state.json design.status = "passed".
 |---|---|
 | `plan.status != "passed"`인데 P5 진입 | 즉시 중단 |
 | P6-B에서 사용자 에디터 사용 여부 응답 없이 design.status 전이 | 즉시 롤백 |
-| P7 진입(Y) 후 HB "완료" 없이 design.status 전이 | 즉시 롤백 |
+| P7 진입(Y) 후 사용자 "완료" 없이 design.status 전이 | 즉시 롤백 |
 | P6-B `n` 응답으로 P7 skip했는데 P7 기동 | spec 위반, 롤백 |
 | deck-verifier FAIL인데 재시도 없이 PASS로 상신 | spec 위반, 즉시 롤백 |
-| Pre-flight 토큰 gate 건너뛰고 대량 verifier 실행 | 즉시 중단, HB confirm 수신 후 재개 |
+| Pre-flight 토큰 gate 건너뛰고 대량 verifier 실행 | 즉시 중단, 사용자 confirm 수신 후 재개 |
 | 부분 재생성 요청에 풀 덱 재생성 | 즉시 중단, 해당 slide만 재생성 |

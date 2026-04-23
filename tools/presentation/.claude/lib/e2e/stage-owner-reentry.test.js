@@ -26,7 +26,7 @@ test('A pain re-entry: plan stage owner write does not touch design sub-object',
   assert.equal(before.design.status, 'passed');
   assert.ok(before.design.slides.length === 7);
 
-  // A pain: plan.outline 갱신 (HB가 슬라이드 추가)
+  // A pain: plan.outline 갱신 (사용자가 슬라이드 추가)
   // writeStage('plan', partial) merges partial keys into state.plan directly
   await sm.writeStage('plan', {
     status: 'passed',

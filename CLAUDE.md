@@ -15,7 +15,7 @@
 | 축 | 정의 | 핵심 자산 |
 |---|------|----------|
 | **1축 입력** | 기존 지식을 AI 인식 가능한 형태로 전환 | `rules/`, `refs/`, `wiki/pages/`, `prompts/`, `CLAUDE.md`, `.claude/hooks/`, `skill + wiki 페어` (예: `medical-device-ra-qa-frame`) |
-| **2축 출력** | AI 산출물을 사람이 받는 형식으로 변환 | `.claude/skills/{docx, pdf, pdf-to-md}` |
+| **2축 출력** | AI 산출물을 사람이 받는 형식으로 변환 | `.claude/skills/{docx, pdf, pdf-to-md}`, `tools/presentation/` 하네스 |
 | **3축 맥락 유지** | 세션 간 맥락 보존과 복리 축적 | `.claude/skills/{wrap, repo-cleanup, council, deliverable-review, skill-creator, check-harness, check-harness-context-first}`, `.claude/agents/*`, `wiki/raw/sessions/` (seCall 자동 수집), `wiki/wiki/projects·sessions/` (codex 1차 정리) |
 | **입출력 공용 채널** (1축과 2축에 걸침) | 입력과 출력 양쪽에서 쓰는 도구 | `.mcp.json` MCP 서버, `gws-setup` (Google Workspace) |
 
@@ -39,7 +39,9 @@
 ├── refs/                 ← 정적 지식 (FDA 3계층 153건: statute 117 · regulation 35 · guidance 1 sample)
 ├── wiki/                 ← 동적 지식 (5 layers: sources·pages·raw/sessions·wiki/projects·sessions·schema)
 ├── prompts/              ← LLM 운영 프롬프트 fragment
-├── tools/                ← 운영 자동화 도구 (generate-weights-png.py 등)
+├── tools/                ← 운영 자동화 도구
+│   ├── generate-weights-png.py           # README 가중치 막대그래프 재생성
+│   └── presentation/     # 프레젠테이션 생성 하네스 (4 stage-owner SKILL + 9 agent, 템플릿/자유 A/B 모드)
 ├── assets/               ← README 이미지 (hero.jpg, weights.png)
 └── memory/               ← Claude Code auto-memory placeholder (실 메모리는 `~/.claude/projects/<id>/memory/`에 저장, 본 폴더는 fork 후 사용자가 채움)
 ```
@@ -96,6 +98,7 @@
 - **Python 3** (hooks 실행)
 - **bash** (hook 실행 환경, Windows는 Git Bash 권장)
 - 선택: **pandoc** (docx 변환), **playwright** (pdf 변환), **gws CLI** (Google Workspace), **uvx** (Word MCP 실행)
+- 선택: **Node.js 18+** + **TypeScript 5.7+** (`tools/presentation/` 하네스 사용 시. 설치는 `cd tools/presentation && npm install && npx playwright install chromium`, 상세는 `tools/presentation/CLAUDE.md` + `tools/presentation/ENV.md` 참조)
 
 ## 사용자 시작 가이드
 

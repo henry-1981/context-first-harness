@@ -49,7 +49,7 @@
   - `brutalist-skill` — 스위스 타이포 + CRT 터미널 혼합 (BETA)
   - `output-skill` — placeholder·미완성 코드 방지
   - `stitch-skill` — Google Stitch 호환 시맨틱 디자인 룰
-- **적용 가능**: visual-designer에 3-dial 개념 도입 → 슬라이드 스타일 강도를 HB가 숫자로 지정
+- **적용 가능**: visual-designer에 3-dial 개념 도입 → 슬라이드 스타일 강도를 사용자가 숫자로 지정
 
 ### Better Icons
 - **링크**: https://github.com/better-auth/better-icons

@@ -82,11 +82,11 @@ flowchart TB
 flowchart LR
     md[LLM 산출<br/>Markdown 단일 소스] --> docx_s[docx 스킬]
     md --> pdf_s[pdf 스킬]
-    md --> pres_s[presentation 스킬]
+    md --> pres_s[presentation 하네스<br/>tools/presentation/]
 
     docx_s -->|pandoc + python-docx| docx[docx]
     pdf_s -->|Playwright HTML→PDF| pdf[pdf]
-    pres_s -->|HTML 슬라이드| deck[발표자료]
+    pres_s -->|HTML → PPTX/WebPPT/PDF| deck[발표자료]
 
     docx --> user([사람에게 전달])
     pdf --> user
@@ -255,7 +255,7 @@ flowchart LR
 ├── refs/                 ← 정적 지식 (FDA 3계층 153건: statute 117 · regulation 35 · guidance 1 sample)
 ├── wiki/                 ← 동적 지식 (5개 층: sources·pages·raw/sessions·wiki/projects·sessions·schema, medical-device 사고 구조 1건)
 ├── prompts/              ← LLM 운영 프롬프트 fragment
-└── tools/                ← 운영 자동화 도구 (generate-weights-png.py 등)
+└── tools/                ← 운영 자동화 도구 (generate-weights-png.py + presentation 하네스: 4 stage-owner + 9 agent로 PPTX/WebPPT/PDF 발표자료 생성)
 ```
 
 ## 사용법
@@ -294,7 +294,7 @@ flowchart LR
 - **check-harness** — [team-attention/harness](https://github.com/team-attention/harness) (harness-session 플러그인 v0.3.1)
 - **skill-creator** — [anthropics/skills](https://github.com/anthropics/skills) (Anthropic 공식)
 - **pdf-to-md** — [microsoft/markitdown](https://github.com/microsoft/markitdown) + [chrisryugj/kordoc](https://github.com/chrisryugj/kordoc) 라우팅 기반
-- **그 외(docx · pdf · repo-cleanup · deliverable-review · gws-setup · medical-device-ra-qa-frame · tool-setup)** — 이 레포 자체 작성
+- **그 외(docx · pdf · repo-cleanup · deliverable-review · gws-setup · medical-device-ra-qa-frame · tool-setup · presentation 하네스)** — 이 레포 자체 작성
 
 ## 라이선스
 

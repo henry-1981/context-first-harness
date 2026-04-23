@@ -39,7 +39,7 @@ tools/presentation/.claude/
 
 ## 운영 규율
 
-`tools/presentation/` 하위 수정은 `.worktrees/{topic}/`에서만 수행한다. main tree에서 직접 수정하지 않는다. 이관된 presentation 하네스는 상시 운영 인프라로 간주한다.
+`tools/presentation/`은 상시 운영 인프라다. 수정 시 feature branch에서 작업한 뒤 main으로 병합한다.
 
 ## 핵심 원칙
 

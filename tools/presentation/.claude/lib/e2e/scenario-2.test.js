@@ -81,11 +81,11 @@ test('scenario-2 export.formats includes pptx (C pain 추가)', async () => {
   assert.ok(state.export.files.pptx);
 });
 
-test('scenario-2 plan.outline reflects HB 추가 (8장, slides[5] HB 추가)', async () => {
+test('scenario-2 plan.outline reflects 사용자 추가 (8장, slides[5] 사용자 추가)', async () => {
   const state = JSON.parse(await readFile(FIXTURE, 'utf8'));
   assert.equal(state.plan.outline.slide_count_declared, 8);
   assert.equal(state.plan.outline.slide_count_actual, 8);
   assert.equal(state.plan.outline.slides.length, 8);
-  // slides[5]는 0-indexed로 6번째 슬라이드 = "리스크 분석" (HB 추가)
+  // slides[5]는 0-indexed로 6번째 슬라이드 = "리스크 분석" (사용자 추가)
   assert.equal(state.plan.outline.slides[5].title, '리스크 분석');
 });

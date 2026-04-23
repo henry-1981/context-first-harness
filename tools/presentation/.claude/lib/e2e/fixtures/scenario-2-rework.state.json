@@ -23,8 +23,8 @@
         { "n": 2, "title": "Agenda", "source_range": "input/input.md:5-8", "takeaway": "전체 흐름", "template": "agenda", "fallbacks": [] },
         { "n": 3, "title": "현황 데이터", "source_range": "input/input.md:10-25", "takeaway": "수치 핵심 1", "template": "stat-card", "fallbacks": [] },
         { "n": 4, "title": "쟁점 비교", "source_range": "input/input.md:27-40", "takeaway": "A vs B (수정됨)", "template": "compare", "fallbacks": [] },
-        { "n": 5, "title": "방법론", "source_range": "input/input.md:42-55", "takeaway": "단계 4 (HB 추가)", "template": "bullet", "fallbacks": [] },
-        { "n": 6, "title": "리스크 분석", "source_range": "input/input.md:57-65", "takeaway": "신규 슬라이드 (HB 추가)", "template": "bullet", "fallbacks": [] },
+        { "n": 5, "title": "방법론", "source_range": "input/input.md:42-55", "takeaway": "단계 4 (사용자 추가)", "template": "bullet", "fallbacks": [] },
+        { "n": 6, "title": "리스크 분석", "source_range": "input/input.md:57-65", "takeaway": "신규 슬라이드 (사용자 추가)", "template": "bullet", "fallbacks": [] },
         { "n": 7, "title": "결론", "source_range": "input/input.md:67-72", "takeaway": "행동 지침", "template": "bullet", "fallbacks": [] },
         { "n": 8, "title": "Q&A", "source_range": "input/input.md:74-77", "takeaway": "마무리", "template": "closing", "fallbacks": [] }
       ]

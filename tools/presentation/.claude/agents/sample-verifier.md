@@ -90,7 +90,7 @@ FAIL 시 문제 지적 + check 코드만 기록. 디자인 개선안·대안 슬
 
 본 verifier 자체는 재시도 루프를 수행하지 않는다. stage-owner가 FAIL 판정 받으면 Phase 3 에이전트 재호출 후 sample-verifier 재호출하는 구조. `retries` 필드는 stage-owner가 주입한 재시도 회차 번호(0=1차).
 
-3차(`retries: 2`)에도 FAIL이면 stage-owner가 HB에게 에스컬레이션한다.
+3차(`retries: 2`)에도 FAIL이면 stage-owner가 사용자에게 에스컬레이션한다.
 
 ## 증거 의무
 
