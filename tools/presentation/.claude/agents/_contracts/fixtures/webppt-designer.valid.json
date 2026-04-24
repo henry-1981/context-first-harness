@@ -1,0 +1,15 @@
+{
+  "mode_target": "webppt",
+  "slides": [
+    {
+      "n": 1,
+      "html_path": "samples/b/slides/slide-01.html",
+      "layout_type": "cover",
+      "self_check_pngs": ["draft/_self_check/slide-01.png"],
+      "animated_props": ["opacity", "transform", "filter"],
+      "data_animate": true,
+      "reduced_motion": true
+    }
+  ],
+  "warnings": []
+}

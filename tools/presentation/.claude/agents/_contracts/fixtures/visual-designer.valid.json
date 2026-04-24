@@ -1,0 +1,8 @@
+{
+  "mode_target": "pptx",
+  "slides": [
+    { "n": 1, "html_path": "samples/b/slides/slide-01.html", "layout_type": "cover", "self_check_pngs": ["draft/_self_check/slide-01.png"] },
+    { "n": 2, "html_path": "samples/b/slides/slide-02.html", "layout_type": "bullet-list", "self_check_pngs": ["draft/_self_check/slide-02.png"] }
+  ],
+  "warnings": []
+}

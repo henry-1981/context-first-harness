@@ -1,0 +1,19 @@
+{
+  "status": "pass",
+  "summary_line": "PASS 4 / WARN 0 / FAIL 0",
+  "checks": {
+    "export_file_exists": "pass",
+    "slide_count_match": "pass",
+    "format_valid": "pass",
+    "size_nonzero": "pass"
+  },
+  "export_paths": ["export/deck.pdf"],
+  "findings": [],
+  "retries": 0,
+  "warnings": [],
+  "aql_sample": {
+    "lot_size": 8,
+    "sample_size": 5,
+    "sampled_indices": [0, 2, 4, 5, 7]
+  }
+}

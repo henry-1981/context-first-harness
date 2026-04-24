@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "template-filler.schema.json",
+  "title": "Template-filler agent stdout return",
+  "type": "object",
+  "required": ["deck_data_path", "template_set", "mode_variant", "slides_count"],
+  "properties": {
+    "deck_data_path": { "type": "string", "pattern": "^draft/deck-data\\.json$" },
+    "template_set": { "type": "string", "enum": ["warm", "healthcare-soft"] },
+    "mode_variant": { "type": "string", "enum": ["templateSet", "free", "webppt-free"] },
+    "slides_count": { "type": "integer", "minimum": 1 },
+    "override_css": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["slide", "selector", "css"],
+        "properties": {
+          "slide": { "type": "integer", "minimum": 1 },
+          "selector": { "type": "string" },
+          "css": { "type": "string" }
+        }
+      }
+    },
+    "conflict_check": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["slide", "section_color", "conflict_element", "action"],
+        "properties": {
+          "slide": { "type": "integer" },
+          "section_color": { "type": "string" },
+          "conflict_element": { "type": "string" },
+          "action": { "type": "string", "enum": ["override", "none"] }
+        }
+      }
+    },
+    "context_missing": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["slide", "key", "value"],
+        "properties": {
+          "slide": { "type": "integer" },
+          "key": { "type": "string" },
+          "value": { "type": "string" }
+        }
+      }
+    },
+    "warnings": { "type": "array", "items": { "type": "string" } }
+  }
+}

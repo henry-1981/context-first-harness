@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 1920px; height: 1080px; overflow: hidden; }
+.slide {
+  width: 960px; height: 540px;
+  transform: scale(2); transform-origin: 0 0;
+  overflow: hidden;
+  font-family: 'Pretendard Variable', Pretendard, sans-serif;
+  background: #FFFBF5;
+  padding: 36px 44px;
+  display: flex; flex-direction: column;
+  gap: 18px;
+}
+.body {
+  flex: 1; display: flex; flex-direction: column;
+  gap: 18px;
+}
+.header {
+  display: flex; align-items: center; gap: 14px;
+}
+.header .emoji {
+  width: 48px; height: 48px; border-radius: 50%;
+  background: #F5F0EB;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 26px; flex-shrink: 0;
+}
+.header .title { font-size: 28px; font-weight: 800; color: #2C2420; }
+.header .subtitle { font-size: 15px; color: #8C8580; margin-top: 2px; }
+.columns {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+  flex: 1;
+}
+.column {
+  border-radius: 16px; padding: 20px 20px;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.column.left-col { background: #FFF0F0; border: 1px solid #FECACA; }
+.column.right-col { background: #EBF5FF; border: 1px solid #BFDBFE; }
+.col-badge {
+  display: inline-flex; padding: 4px 11px; border-radius: 6px;
+  font-size: 12px; font-weight: 700; width: fit-content;
+}
+.col-badge.red { background: #EF4444; color: white; }
+.col-badge.blue { background: #1E293B; color: white; }
+.col-title { font-size: 19px; font-weight: 700; color: #2C2420; }
+.col-item {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: 14px; line-height: 1.4; color: #2C2420;
+}
+.col-item .icon { font-size: 16px; flex-shrink: 0; }
+.bottom-note {
+  background: #F5F0EB; border-radius: 12px; padding: 14px 20px;
+  font-size: 14px; line-height: 1.5; color: #2C2420;
+  display: flex; align-items: flex-start; gap: 10px;
+}
+.bottom-note .icon { font-size: 18px; flex-shrink: 0; }
+.bottom-note .highlight { color: #3B82F6; font-weight: 700; text-decoration: underline; }
+.footer {
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 13px; color: #8C8580;
+  border-top: 1px solid #E8E4E0; padding-top: 12px;
+}
+.footer-tag { color: #3B82F6; font-weight: 700; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header">
+    <div class="emoji">{{EMOJI}}</div>
+    <div>
+      <div class="title">{{TITLE}}</div>
+      <div class="subtitle">{{SUBTITLE}}</div>
+    </div>
+  </div>
+  <div class="body">
+    <div class="columns">
+      <div class="column left-col">
+        <div class="col-badge red">{{LEFT_BADGE}}</div>
+        <div class="col-title">{{LEFT_TITLE}}</div>
+        <div class="col-item"><span class="icon">{{L1_ICON}}</span><span>{{L1_TEXT}}</span></div>
+        <div class="col-item"><span class="icon">{{L2_ICON}}</span><span>{{L2_TEXT}}</span></div>
+        <div class="col-item"><span class="icon">{{L3_ICON}}</span><span>{{L3_TEXT}}</span></div>
+        <div class="col-item"><span class="icon">{{L4_ICON}}</span><span>{{L4_TEXT}}</span></div>
+      </div>
+      <div class="column right-col">
+        <div class="col-badge blue">{{RIGHT_BADGE}}</div>
+        <div class="col-title">{{RIGHT_TITLE}}</div>
+        <div class="col-item"><span class="icon">{{R1_ICON}}</span><span>{{R1_TEXT}}</span></div>
+        <div class="col-item"><span class="icon">{{R2_ICON}}</span><span>{{R2_TEXT}}</span></div>
+        <div class="col-item"><span class="icon">{{R3_ICON}}</span><span>{{R3_TEXT}}</span></div>
+        <div class="col-item"><span class="icon">{{R4_ICON}}</span><span>{{R4_TEXT}}</span></div>
+      </div>
+    </div>
+    <div class="bottom-note">
+      <span class="icon">💡</span>
+      <span>{{BOTTOM_NOTE}}</span>
+    </div>
+  </div>
+  <div class="footer">
+    <span>{{FOOTER_LEFT}}</span>
+    <span class="footer-tag">{{FOOTER_TAG}}</span>
+  </div>
+</div>
+</body>
+</html>

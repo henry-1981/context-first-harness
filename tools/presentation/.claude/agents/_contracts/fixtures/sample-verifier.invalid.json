@@ -1,0 +1,16 @@
+{
+  "status": "fail",
+  "summary_line": "PASS 3 / WARN 0 / FAIL 1",
+  "checks": {
+    "slide_count_exact": "fail",
+    "direction_reflected": "pass",
+    "png_files_exist": "pass",
+    "ab_compare_opened": "pass"
+  },
+  "sides": {
+    "a": { "slide_count": 3, "html_paths": [], "png_paths": [] },
+    "b": { "slide_count": 2, "html_paths": [], "png_paths": [] }
+  },
+  "findings": [],
+  "retries": 0
+}

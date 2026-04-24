@@ -37,3 +37,9 @@ venv/
 dist/
 build/
 *.egg-info/
+
+# presentation 하네스 — 운영 중 생성 자산
+tools/presentation/{PPT_WORKSPACE_ROOT}/
+tools/presentation/**/state.json
+tools/presentation/**/logs/hooks.jsonl
+tools/presentation/.claude/settings.local.json

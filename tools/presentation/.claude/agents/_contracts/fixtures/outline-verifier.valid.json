@@ -1,0 +1,22 @@
+{
+  "status": "warn",
+  "summary_line": "PASS 5 / WARN 1 / FAIL 0",
+  "checks": {
+    "slide_count_match": "pass",
+    "takeaway_present": "pass",
+    "message_dedup": "warn",
+    "image_placeholder_path": "n/a",
+    "paraphrase_token_overlap": "pass",
+    "footer_tag_consistent": "pass"
+  },
+  "findings": [
+    {
+      "check": "message_dedup",
+      "severity": "warn",
+      "evidence_path": "draft/outline.md:42-45",
+      "quote": "SOP 교육 실패"
+    }
+  ],
+  "retries": 0,
+  "warnings": []
+}

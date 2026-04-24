@@ -1,0 +1,71 @@
+{
+  "project": "e2e-partial-20260421",
+  "created": "2026-04-21T10:00:00+09:00",
+  "spec_version": "presentation-refactor-v1",
+  "source": {
+    "type": "file",
+    "path": "input/input.md",
+    "classification": "prepared"
+  },
+  "config": {
+    "mode": "pptx",
+    "mode_variant": "templateSet",
+    "direction": "editorial-magazine",
+    "dials": { "design_variance": 2, "motion_intensity": 0, "visual_density": 3 }
+  },
+  "plan": {
+    "status": "passed",
+    "outline": {
+      "slide_count_declared": 7,
+      "slide_count_actual": 7,
+      "slides": [
+        { "n": 1, "title": "표지", "source_range": "input/input.md:1-3", "takeaway": "도입", "template": "cover", "fallbacks": [] },
+        { "n": 2, "title": "Agenda", "source_range": "input/input.md:5-8", "takeaway": "전체 흐름", "template": "agenda", "fallbacks": [] },
+        { "n": 3, "title": "현황 데이터", "source_range": "input/input.md:10-25", "takeaway": "수치 핵심 1", "template": "stat-card", "fallbacks": [] },
+        { "n": 4, "title": "쟁점 비교", "source_range": "input/input.md:27-40", "takeaway": "A vs B", "template": "compare", "fallbacks": [] },
+        { "n": 5, "title": "방법론", "source_range": "input/input.md:42-55", "takeaway": "단계 3", "template": "bullet", "fallbacks": [] },
+        { "n": 6, "title": "결론", "source_range": "input/input.md:57-65", "takeaway": "행동 지침", "template": "bullet", "fallbacks": [] },
+        { "n": 7, "title": "Q&A", "source_range": "input/input.md:67-70", "takeaway": "마무리", "template": "closing", "fallbacks": [] }
+      ]
+    },
+    "verifiers": {
+      "outline": { "status": "pass", "retries": 0, "warnings": [], "evidence_path": "verify/plan.md" }
+    }
+  },
+  "design": {
+    "status": "passed",
+    "slides": [
+      { "n": 1, "html_path": "draft/slides/slide-01.html", "agent": "template-filler", "self_check_pngs": [], "verifier_status": "pass", "override_css": [] },
+      { "n": 2, "html_path": "draft/slides/slide-02.html", "agent": "template-filler", "self_check_pngs": [], "verifier_status": "pass", "override_css": [] },
+      { "n": 3, "html_path": "draft/slides/slide-03.html", "agent": "template-filler", "self_check_pngs": [], "verifier_status": "pass", "override_css": [] },
+      { "n": 4, "html_path": "draft/slides/slide-04.html", "agent": "template-filler", "self_check_pngs": [], "verifier_status": "pass", "override_css": [] },
+      { "n": 5, "html_path": "draft/slides/slide-05.html", "agent": "template-filler", "self_check_pngs": ["_self_check/slide-05.png"], "verifier_status": "pass", "override_css": [] },
+      { "n": 6, "html_path": "draft/slides/slide-06.html", "agent": "template-filler", "self_check_pngs": [], "verifier_status": "pass", "override_css": [] },
+      { "n": 7, "html_path": "draft/slides/slide-07.html", "agent": "template-filler", "self_check_pngs": [], "verifier_status": "pass", "override_css": [] }
+    ],
+    "verifiers": {
+      "deck": { "status": "pass", "aql_sample_slides": [5], "retries": 0, "warnings": [], "evidence_path": "verify/design.md" }
+    },
+    "editor_history": []
+  },
+  "export": {
+    "formats": ["webppt", "pdf"],
+    "files": { "webppt": "export/webppt.html", "pdf": "export/deck.pdf" },
+    "verifiers": {
+      "export": { "status": "pass", "aql_sample_slides": [1, 4, 7], "retries": 0, "warnings": [], "evidence_path": "verify/export.md" }
+    }
+  },
+  "history": [
+    { "ts": "2026-04-21T10:00:00+09:00", "event": "plan_started" },
+    { "ts": "2026-04-21T10:05:00+09:00", "event": "outline_verifier_pass" },
+    { "ts": "2026-04-21T10:08:00+09:00", "event": "sample_verifier_pass" },
+    { "ts": "2026-04-21T10:10:00+09:00", "event": "plan_passed" },
+    { "ts": "2026-04-21T10:30:00+09:00", "event": "full_deck_generated", "producer": "template-filler" },
+    { "ts": "2026-04-21T10:38:00+09:00", "event": "deck_verifier_pass" },
+    { "ts": "2026-04-21T10:40:00+09:00", "event": "design_passed", "editor": "skipped" },
+    { "ts": "2026-04-21T10:42:00+09:00", "event": "export_formats_selected", "formats": ["webppt", "pdf"] },
+    { "ts": "2026-04-21T10:50:00+09:00", "event": "export_files_written" },
+    { "ts": "2026-04-21T10:55:00+09:00", "event": "export_verifier_pass" },
+    { "ts": "2026-04-21T11:30:00+09:00", "event": "partial_regen", "slide": 5, "producer": "template-filler" }
+  ]
+}

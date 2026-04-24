@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 1920px; height: 1080px; overflow: hidden; word-break: keep-all; }
+.slide {
+  width: 960px; height: 540px;
+  transform: scale(2); transform-origin: 0 0;
+  overflow: hidden;
+  font-family: 'Noto Sans KR', sans-serif;
+  background: linear-gradient(180deg, #F8FBFF 0%, #EFF6FF 100%);
+  color: #1E293B;
+  padding: 40px 50px;
+  display: flex; flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+.top-bar {
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, #0EA5E9, #10B981);
+}
+.title { font-size: 36px; font-weight: 700; color: #1E293B; margin-bottom: 8px; }
+.subtitle { font-size: 18px; color: #64748B; font-weight: 400; margin-bottom: 32px; }
+.info-cards {
+  display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 24px;
+}
+.info-card {
+  background: #F0F9FF; border: 1px solid #E2E8F0; border-radius: 12px;
+  padding: 12px 20px;
+  display: flex; align-items: center; gap: 12px;
+}
+.info-card .label { font-size: 12px; color: #64748B; white-space: nowrap; }
+.info-card .value { font-size: 15px; font-weight: 600; color: #1E293B; white-space: nowrap; }
+.tag-row { display: flex; gap: 10px; }
+.pill {
+  background: #ECFDF5; color: #10B981; border: 1px solid #D1FAE5;
+  border-radius: 9999px; padding: 5px 16px;
+  font-size: 13px; font-weight: 600;
+}
+.footer {
+  position: absolute; bottom: 24px; left: 50px; right: 50px;
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 13px; color: #94A3B8;
+  border-top: 1px solid #E2E8F0; padding-top: 12px;
+}
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="top-bar"></div>
+  <div class="title">{{TITLE}}</div>
+  <div class="subtitle">{{SUBTITLE}}</div>
+  <div class="info-cards">
+    <div class="info-card">
+      <div><div class="label">{{INFO1_LABEL}}</div><div class="value">{{INFO1_VALUE}}</div></div>
+    </div>
+    <div class="info-card">
+      <div><div class="label">{{INFO2_LABEL}}</div><div class="value">{{INFO2_VALUE}}</div></div>
+    </div>
+    <div class="info-card">
+      <div><div class="label">{{INFO3_LABEL}}</div><div class="value">{{INFO3_VALUE}}</div></div>
+    </div>
+  </div>
+  <div class="tag-row">
+    <span class="pill">{{TAG1}}</span>
+    <span class="pill">{{TAG2}}</span>
+  </div>
+  <div class="footer">
+    <span>{{FOOTER_LEFT}}</span>
+    <span>{{FOOTER_RIGHT}}</span>
+  </div>
+</div>
+</body>
+</html>

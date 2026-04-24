@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 1920px; height: 1080px; overflow: hidden; }
+.slide {
+  width: 960px; height: 540px;
+  transform: scale(2); transform-origin: 0 0;
+  overflow: hidden;
+  font-family: 'Pretendard Variable', Pretendard, sans-serif;
+  background: #FFFBF5;
+  padding: 36px 44px;
+  display: flex; flex-direction: column;
+  gap: 18px;
+}
+.body {
+  flex: 1; display: flex; flex-direction: column;
+}
+.header {
+  display: flex; align-items: center; gap: 14px;
+}
+.header .emoji {
+  width: 48px; height: 48px; border-radius: 50%;
+  background: #F5F0EB;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 26px; flex-shrink: 0;
+}
+.header .title { font-size: 28px; font-weight: 800; color: #2C2420; }
+.header .subtitle { font-size: 15px; color: #8C8580; margin-top: 2px; }
+.steps {
+  display: flex; flex-direction: column; gap: 10px;
+}
+.step {
+  background: white; border: 1px solid #E8E4E0; border-radius: 16px;
+  padding: 14px 20px;
+  display: flex; align-items: flex-start; gap: 14px;
+}
+.centered .step {
+  width: fit-content; min-width: 520px;
+  margin: 0 auto; padding: 20px 32px;
+}
+.step-number {
+  width: 36px; height: 36px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 15px; color: white;
+  flex-shrink: 0;
+}
+.step-number.s1 { background: #EF4444; }
+.step-number.s2 { background: #F59E0B; }
+.step-number.s3 { background: #22C55E; }
+.step-number.s4 { background: #3B82F6; }
+.step-number.s5 { background: #8B5CF6; }
+.step-content { }
+.step-content .step-title { font-size: 17px; font-weight: 700; color: #2C2420; margin-bottom: 6px; }
+.step-badge-row { display: flex; flex-direction: column; gap: 4px; }
+.step-badge-item { display: flex; align-items: center; gap: 10px; font-size: 13px; color: #4B4540; }
+.step-badge {
+  font-size: 11px; font-weight: 700; padding: 2px 9px; border-radius: 4px;
+  flex-shrink: 0;
+}
+.step-badge.cause { background: #FEE2E2; color: #991B1B; }
+.step-badge.fix { background: #D1FAE5; color: #065F46; }
+.footer {
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 13px; color: #8C8580;
+  border-top: 1px solid #E8E4E0; padding-top: 12px;
+}
+.footer-tag { color: #EF4444; font-weight: 700; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header">
+    <div class="emoji">{{EMOJI}}</div>
+    <div>
+      <div class="title">{{TITLE}}</div>
+      <div class="subtitle">{{SUBTITLE}}</div>
+    </div>
+  </div>
+  <div class="body">
+    <div class="steps">
+      <div class="step">
+        <div class="step-number s1">1</div>
+        <div class="step-content">
+          <div class="step-title">{{S1_TITLE}}</div>
+          <div class="step-badge-row">
+            <div class="step-badge-item"><span class="step-badge cause">{{S1_BADGE}}</span><span>{{S1_DESC}}</span></div>
+            <div class="step-badge-item"><span class="step-badge fix">해결</span><span>{{S1_FIX}}</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-number s2">2</div>
+        <div class="step-content">
+          <div class="step-title">{{S2_TITLE}}</div>
+          <div class="step-badge-row">
+            <div class="step-badge-item"><span class="step-badge cause">{{S2_BADGE}}</span><span>{{S2_DESC}}</span></div>
+            <div class="step-badge-item"><span class="step-badge fix">해결</span><span>{{S2_FIX}}</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-number s3">3</div>
+        <div class="step-content">
+          <div class="step-title">{{S3_TITLE}}</div>
+          <div class="step-badge-row">
+            <div class="step-badge-item"><span class="step-badge cause">{{S3_BADGE}}</span><span>{{S3_DESC}}</span></div>
+            <div class="step-badge-item"><span class="step-badge fix">해결</span><span>{{S3_FIX}}</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <span>{{FOOTER_LEFT}}</span>
+    <span class="footer-tag">{{FOOTER_TAG}}</span>
+  </div>
+</div>
+</body>
+</html>

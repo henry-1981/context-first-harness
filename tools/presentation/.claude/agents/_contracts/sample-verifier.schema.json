@@ -1,0 +1,60 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "sample-verifier.schema.json",
+  "title": "Sample-verifier agent stdout return",
+  "type": "object",
+  "required": ["status", "summary_line", "checks", "sides", "findings", "retries"],
+  "properties": {
+    "status": { "type": "string", "enum": ["pass", "warn", "fail"] },
+    "summary_line": { "type": "string", "pattern": "^PASS \\d+ / WARN \\d+ / FAIL \\d+$" },
+    "checks": {
+      "type": "object",
+      "required": ["slide_count_exact", "direction_reflected", "png_files_exist", "ab_compare_opened"],
+      "properties": {
+        "slide_count_exact": { "type": "string", "enum": ["pass", "fail"] },
+        "direction_reflected": { "type": "string", "enum": ["pass", "warn", "fail"] },
+        "png_files_exist": { "type": "string", "enum": ["pass", "fail"] },
+        "ab_compare_opened": { "type": "string", "enum": ["pass", "fail"] }
+      }
+    },
+    "sides": {
+      "type": "object",
+      "required": ["a", "b"],
+      "properties": {
+        "a": { "$ref": "#/definitions/sideResult" },
+        "b": { "$ref": "#/definitions/sideResult" }
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["check", "severity"],
+        "properties": {
+          "check": { "type": "string" },
+          "side": { "type": "string", "enum": ["a", "b"] },
+          "severity": { "type": "string", "enum": ["warn", "fail"] },
+          "evidence_path": { "type": "string" },
+          "quote": { "type": "string", "minLength": 5, "maxLength": 30 }
+        },
+        "anyOf": [
+          { "required": ["evidence_path"] },
+          { "required": ["quote"] }
+        ]
+      }
+    },
+    "retries": { "type": "integer", "minimum": 0 },
+    "warnings": { "type": "array", "items": { "type": "string" } }
+  },
+  "definitions": {
+    "sideResult": {
+      "type": "object",
+      "required": ["slide_count", "html_paths", "png_paths"],
+      "properties": {
+        "slide_count": { "type": "integer", "minimum": 0, "maximum": 2 },
+        "html_paths": { "type": "array", "items": { "type": "string" } },
+        "png_paths": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  }
+}

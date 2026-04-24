@@ -1,0 +1,25 @@
+{
+  "status": "pass",
+  "summary_line": "PASS 4 / WARN 0 / FAIL 0",
+  "checks": {
+    "slide_count_exact": "pass",
+    "direction_reflected": "pass",
+    "png_files_exist": "pass",
+    "ab_compare_opened": "pass"
+  },
+  "sides": {
+    "a": {
+      "slide_count": 2,
+      "html_paths": ["samples/a/slides/slide-01.html", "samples/a/slides/slide-03.html"],
+      "png_paths": ["samples/a/slide-01.png", "samples/a/slide-03.png"]
+    },
+    "b": {
+      "slide_count": 2,
+      "html_paths": ["samples/b/slides/slide-01.html", "samples/b/slides/slide-03.html"],
+      "png_paths": ["samples/b/slide-01.png", "samples/b/slide-03.png"]
+    }
+  },
+  "findings": [],
+  "retries": 0,
+  "warnings": []
+}

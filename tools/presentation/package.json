@@ -1,0 +1,34 @@
+{
+  "name": "presentation-pptx",
+  "version": "0.1.0",
+  "description": "마크다운 → PPTX 발표자료 생성 파이프라인",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "tsx src/index.ts",
+    "test": "vitest --passWithNoTests --exclude 'dist/**'",
+    "html2pptx": "tsc && node dist/html-pipeline/cli.js",
+    "profile": "tsc && node dist/profile/cli.js",
+    "editor": "node tools/slides-grab/scripts/editor-server.js",
+    "test:template-copy-smoke": "node tools/slides-grab-copy/scripts/smoke-template-copy.js",
+    "web-ppt": "python scripts/build-webppt.py",
+    "export-pptx": "npm run html2pptx --"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0",
+    "vitest": "^4.0.18"
+  },
+  "dependencies": {
+    "@types/jszip": "^3.4.0",
+    "ajv": "^8.18.0",
+    "ajv-formats": "^3.0.1",
+    "express": "^5.2.1",
+    "jszip": "^3.10.1",
+    "playwright": "^1.58.2",
+    "pptxgenjs": "^4.0.1",
+    "sharp": "^0.34.5",
+    "yaml": "^2.8.2"
+  }
+}
