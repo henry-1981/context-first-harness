@@ -1,0 +1,15 @@
+{
+  "name": "khc-marketplace",
+  "owner": {
+    "name": "KHC",
+    "email": "dutyfree1981@gmail.com"
+  },
+  "plugins": [
+    {
+      "name": "presentation",
+      "source": { "source": "npm", "package": "@khc/presentation-plugin" },
+      "description": "KHC presentation harness — gated chunk-based deck production with 9-stage workflow",
+      "version": "0.1.0"
+    }
+  ]
+}
