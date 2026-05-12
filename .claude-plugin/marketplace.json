@@ -7,7 +7,7 @@
   "plugins": [
     {
       "name": "presentation",
-      "source": { "source": "npm", "package": "@khc/presentation-plugin" },
+      "source": { "source": "npm", "package": "@henry1981/presentation-plugin" },
       "description": "KHC presentation harness — gated chunk-based deck production with 9-stage workflow",
       "version": "0.1.0"
     }
