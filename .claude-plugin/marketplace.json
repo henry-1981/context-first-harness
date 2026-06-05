@@ -15,7 +15,7 @@
       "name": "nondev-harness",
       "source": { "source": "npm", "package": "@henry1981/nondev-harness-plugin" },
       "description": "KHC non-developer deliverable harness — setup wizard + PRD-Plan-Execute-Review 4-stage pipeline (5-skill)",
-      "version": "0.7.0"
+      "version": "0.8.0"
     }
   ]
 }
